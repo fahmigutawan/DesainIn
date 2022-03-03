@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "739221355045",
+    "project_id": "bcc-intern-3",
+    "storage_bucket": "bcc-intern-3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739221355045:android:5ec23ca16681070a131dcc",
+        "android_client_info": {
+          "package_name": "com.example.bccintern3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "739221355045-dppstmb9apvb704mppk1ooq1ru47m1uq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiI8oQ6OSKQ3fDlKlFPaUpjBlyL45_zGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "739221355045-dppstmb9apvb704mppk1ooq1ru47m1uq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
