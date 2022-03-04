@@ -12,8 +12,10 @@
     <color name="light_gray">#9A9A9A</color>
     <color name="mid_gray">#717171</color>
     <color name="dark_gray">#373737</color>
+    <color name="mid_gray_darker">#817E7E</color>
     <color name="sky_blue">#87ceeb</color>
     <color name="blue_carrulean">#253da1</color>
     <color name="blue_dark">#02198b</color>
     <color name="blue_navy">#02055a</color>
+    <color name="blue_cyan">#3F7FFF</color>
 </resources>

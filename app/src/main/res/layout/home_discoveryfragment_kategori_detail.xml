@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/discoveryfragment_kategoridetail_namakategori_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama Kategori"
+            android:textSize="18dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:padding="16dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                >
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/discoveryfragment_kategoridetail_banner_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/light_gray">
+
+                </androidx.viewpager2.widget.ViewPager2>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/discoveryfragment_kategoridetail_deskripsi_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/poppins_reguler"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id mattis diam. Phasellus a aliquam risus. Nulla ac leo non metus eleifend pretium. Morbi interdum nibh non euismod tristique. Mauris ultrices, sapien sed tincidunt luctus, mi tellus ullamcorper nulla, id ullamcorper risus mauris ultricies orci. Phasellus quis lacinia risus. Fusce non posuere lectus, sit amet laoreet lorem. Duis rutrum, dui sagittis aliquam commodo, augue libero blandit justo, et sollicitudin ipsum justo vitae diam."
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:layout_marginTop="32dp"
+                        android:id="@+id/discoveryfragment_kategoridetail_tampilkan_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tampilkan desainer"
+                        android:fontFamily="@font/inter_bold"
+                        android:textSize="16dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/universal_darkblue_button"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
