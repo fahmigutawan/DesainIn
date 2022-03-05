@@ -31,7 +31,7 @@
                 android:layout_marginTop="24dp"
                 android:padding="16dp"
                 android:textSize="10dp"
-                android:background="@drawable/home_discoveryfragment_artikel_background"
+                android:background="@drawable/home_discoveryfragment_artikeldetail_artikelbackground"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id mattis diam. Phasellus a aliquam risus. Nulla ac leo non metus eleifend pretium. Morbi interdum nibh non euismod tristique. Mauris ultrices, sapien sed tincidunt luctus, mi tellus ullamcorper nulla, id ullamcorper risus mauris ultricies orci. Phasellus quis lacinia risus. Fusce non posuere lectus, sit amet laoreet lorem. Duis rutrum, dui sagittis aliquam commodo, augue libero blandit justo, et sollicitudin ipsum justo vitae diam." />
         </LinearLayout>
     </ScrollView>

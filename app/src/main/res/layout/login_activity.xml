@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="start"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="36dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_reguler"
+            android:text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+
+            android:paddingBottom="32dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_reguler"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-8dp"
+
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/loginactivity_emil_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:background="@drawable/universal_white_textinput"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins_reguler"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_reguler"
+                android:text="Password"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black"
+                    android:layout_marginTop="-8dp"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/loginactivity_password_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:inputType="textPassword"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:fontFamily="@font/poppins_reguler"
+                        android:background="@drawable/universal_white_textinput"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_reguler"
+                android:text="Belum punya akun? Daftar "
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/loginactivity_toregister_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark_blue_button"
+                android:clickable="true"
+                android:fontFamily="@font/poppins_reguler"
+                android:text="disini"
+                android:textColor="@color/blue_carrulean"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginactivity_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/universal_darkblue_button"
+            android:fontFamily="@font/inter_bold"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textSize="16dp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_reguler"
+            android:gravity="center"
+            android:text="Atau\nMasuk dengan"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/loginactivity_google_fab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:backgroundTint="@color/dark_blue_button"
+            android:clickable="true"
+            android:foreground="@drawable/login_activity_google_button"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

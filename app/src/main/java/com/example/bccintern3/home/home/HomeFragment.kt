@@ -9,15 +9,23 @@ import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.FrameLayout
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.bccintern3.R
+import com.example.bccintern3.invisiblefunction.BackHandler
 import com.example.bccintern3.invisiblefunction.LoadFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.textfield.TextInputEditText
 
-class HomeFragment(flManager: FragmentManager)
-    : Fragment(R.layout.home_homefragment){
-    private val flManager=flManager
+class HomeFragment(private var flManager: FragmentManager,
+                   private var activity:AppCompatActivity,
+                   private var thisContext: Context,
+                   private var navbar:BottomNavigationView) :
+    Fragment(R.layout.home_homefragment),
+    BackHandler {
+
+
     private lateinit var searchEt:TextInputEditText
     private var fragLayout:Int=0
     private lateinit var loadFrag:LoadFragment
@@ -37,26 +45,26 @@ class HomeFragment(flManager: FragmentManager)
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if(searchEt.text.toString()==""){
-                    loadFrag.transfer(childFragmentManager,fragLayout,notFilled)
+                    loadFrag.transfer(flManager,fragLayout,notFilled)
                 }else{
-                    loadFrag.transfer(childFragmentManager,fragLayout,filled)
+                    loadFrag.transfer(flManager,fragLayout,filled)
                 }
             }
             override fun afterTextChanged(s: Editable?) {
                 if(searchEt.text.toString()==""){
-                    loadFrag.transfer(childFragmentManager,fragLayout,notFilled)
+                    loadFrag.transfer(flManager,fragLayout,notFilled)
                 }else{
-                    loadFrag.transfer(childFragmentManager,fragLayout,filled)
+                    loadFrag.transfer(flManager,fragLayout,filled)
                 }
             }
         })
     }
     fun runFirstFragment(){
-        loadFrag.transfer(childFragmentManager,fragLayout,notFilled)
+        loadFrag.transfer(flManager,fragLayout,notFilled)
     }
-    fun init(view:View) {
-        filled = HomeFragmentFilled(childFragmentManager)
-        notFilled = HomeFragmentNotFilled(childFragmentManager)
+    fun init(view:View){
+        filled = HomeFragmentFilled(flManager,activity,view.findViewById(R.id.home_homefragment_search_et),thisContext,navbar)
+        notFilled = HomeFragmentNotFilled(flManager,activity,thisContext,navbar)
         searchEt = view.findViewById(R.id.home_homefragment_search_et)
         fragLayout = R.id.home_homefragment_fl
         loadFrag = LoadFragment()
