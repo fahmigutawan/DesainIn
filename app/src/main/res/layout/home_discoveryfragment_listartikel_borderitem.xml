@@ -8,9 +8,11 @@
 
     <LinearLayout
         android:padding="8dp"
+        android:clickable="true"
         android:id="@+id/discoveryfragment_listartikel_border_clickarea"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         android:background="@drawable/universal_ripple_rv_background"
         >

@@ -154,7 +154,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_weight="1"
                         android:text="Order"
-                        android:background="@drawable/universal_darkblue_button"
+                        android:background="@drawable/universal_yellow_button"
                         android:fontFamily="@font/inter_bold"
                         android:textSize="16dp"
                         android:textAllCaps="false"

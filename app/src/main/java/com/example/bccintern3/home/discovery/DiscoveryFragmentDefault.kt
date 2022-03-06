@@ -2,9 +2,12 @@ package com.example.bccintern3.home.discovery
 
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -14,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern3.R
 import com.example.bccintern3.home.discovery.adapterdefaultarticle.RvAdapterDefaultArticle
 import com.example.bccintern3.home.discovery.adapterdefaultcategory.RvAdapterDefaultKategori
+import com.example.bccintern3.invisiblefunction.BackHandler
+import com.example.bccintern3.invisiblefunction.LoadFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DiscoveryFragmentDefault(private val flManager:FragmentManager,
@@ -27,6 +32,7 @@ class DiscoveryFragmentDefault(private val flManager:FragmentManager,
     private lateinit var kategoriRv:RecyclerView
     private lateinit var artikelRv:RecyclerView
     private lateinit var artikelLainTv:TextView
+    private lateinit var loadFrag:LoadFragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,15 +49,29 @@ class DiscoveryFragmentDefault(private val flManager:FragmentManager,
             }
         })
     }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        runBackHandler(context)
+    }
 
+    fun runClickListener(){
+        artikelLainTv.setOnClickListener {
+            Handler().postDelayed({
+                loadFrag.transfer(
+                    flManager,
+                    R.id.homeactivity_flmanager,
+                    DiscoveryFragmentListArtikel(flManager,thisContext,navbar,activity)
+                )},1000)
+        }
+    }
     fun setKategori(view: View){
-        kategoriAdapter = RvAdapterDefaultKategori(view,flManager)
+        kategoriAdapter = RvAdapterDefaultKategori(view,flManager,thisContext,navbar,activity)
         val gridLayoutManager = GridLayoutManager(thisContext,3)
         kategoriRv.layoutManager = gridLayoutManager
         kategoriRv.adapter = kategoriAdapter
     }
     fun setArtikel(view: View){
-        artikelAdapter = RvAdapterDefaultArticle(view,flManager)
+        artikelAdapter = RvAdapterDefaultArticle(view,flManager,activity,navbar)
         val linearLayoutManager = LinearLayoutManager(thisContext)
         artikelRv.layoutManager = linearLayoutManager
         artikelRv.adapter = artikelAdapter
@@ -60,5 +80,25 @@ class DiscoveryFragmentDefault(private val flManager:FragmentManager,
         kategoriRv = view.findViewById(R.id.discoveryfragment_default_kategori_rv)
         artikelRv = view.findViewById(R.id.discoveryfragment_default_artikel_rv)
         artikelLainTv = view.findViewById(R.id.discoveryfragment_default_artikellain_tv)
+        loadFrag = LoadFragment()
+        runClickListener()
+    }
+    private fun runBackHandler(context: Context){
+        val back = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                val handler = context as BackHandler
+                val time = System.currentTimeMillis()
+                val toast = Toast.makeText(thisContext,"Tekan kembali lagi untuk keluar", Toast.LENGTH_SHORT)
+
+                if(time+1500>System.currentTimeMillis()){
+                    handler.exit(activity)
+                    toast.cancel()
+                }
+                else{
+                    toast.show()
+                }
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this,back)
     }
 }

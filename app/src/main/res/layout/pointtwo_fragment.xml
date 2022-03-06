@@ -18,6 +18,7 @@
 
 
         <ImageView
+            android:id="@+id/onboardingtwo_image"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOREM IPSUM"
+            android:text="Diskusi"
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_bold"
             android:textSize="36dp"
@@ -39,7 +40,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
+            android:text="Memberikan kemudahan Anda dalam berkomunikasi bersama desainer ternama."
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_medium"
             android:textSize="14dp"

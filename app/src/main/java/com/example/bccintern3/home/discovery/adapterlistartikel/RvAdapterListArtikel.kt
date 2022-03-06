@@ -3,12 +3,16 @@ package com.example.bccintern3.home.discovery.adapterlistartikel
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class RvAdapterListArtikel(private var parentView: View,
                            private var mainFlManager:FragmentManager,
-                           artikelAtribut:ArrayList<ArrayList<String>>): RecyclerView.Adapter<RvAdapterListArtikelViewHolder>()
+                           private var artikelAtribut:ArrayList<ArrayList<String>>,
+                           private var navbar:BottomNavigationView,
+                           private var activity: AppCompatActivity): RecyclerView.Adapter<RvAdapterListArtikelViewHolder>()
 {
     private var param = artikelAtribut.get(0)
 
@@ -16,11 +20,20 @@ class RvAdapterListArtikel(private var parentView: View,
         return RvAdapterListArtikelViewHolder(LayoutInflater.from(parent.context)
             ,parent
             ,parentView
-            ,mainFlManager)
+            ,mainFlManager
+            ,navbar
+            ,activity)
     }
 
     override fun onBindViewHolder(holder: RvAdapterListArtikelViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(
+            artikelAtribut.get(0).get(position),
+            artikelAtribut.get(1).get(position),
+            artikelAtribut.get(2).get(position),
+            artikelAtribut.get(3).get(position),
+            artikelAtribut.get(4).get(position),
+            artikelAtribut.get(5).get(position),
+            artikelAtribut.get(6).get(position))
     }
 
     override fun getItemCount(): Int {

@@ -15,6 +15,14 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="start"
+            android:text="Kategori"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/discoveryfragment_default_kategori_rv"
@@ -25,7 +33,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingTop="16dp">
 
@@ -60,7 +68,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/discoveryfragment_default_artikel_rv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
 

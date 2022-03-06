@@ -6,11 +6,13 @@ import android.os.Handler
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
 import com.example.bccintern3.invisiblefunction.DbReference
 import com.example.bccintern3.loginactivity.LoginActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
+import com.squareup.picasso.Picasso
 
 class SignUpActivity:AppCompatActivity(R.layout.signup_activity) {
     private lateinit var nama:TextInputEditText
@@ -23,10 +25,21 @@ class SignUpActivity:AppCompatActivity(R.layout.signup_activity) {
     private lateinit var fbAuth: FirebaseAuth
     private lateinit var klmnAdapter: ArrayAdapter<String>
     private lateinit var dbReference: DbReference
+    private lateinit var imageView: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signup_activity)
 
+        init()
+        setImage()
+
+        signUpBtn.setOnClickListener {
+            register()
+        }
+    }
+
+    fun init(){
         //deklarasi
         jenisKlmn = findViewById(R.id.signupactivity_klmn_spinner)
         nama = findViewById(R.id.signupactivity_nama_edittext)
@@ -37,16 +50,20 @@ class SignUpActivity:AppCompatActivity(R.layout.signup_activity) {
         signUpBtn = findViewById(R.id.signupactivity_signup_btn)
         fbAuth = FirebaseAuth.getInstance()
         dbReference = DbReference()
+        imageView = findViewById(R.id.signupactivity_imageiv)
 
         //jenis kelamin ke adapter array
         klmnAdapter = ArrayAdapter(this,R.layout.signup_activity_spinner_style,jenisKelamin())
         jenisKlmn.setAdapter(klmnAdapter)
-
-        signUpBtn.setOnClickListener {
-            register()
-        }
     }
-
+    fun setImage(){
+        Picasso
+            .get()
+            .load(R.drawable.logo)
+            .resize(420,420)
+            .transform(RoundCornerRect(60f,0f,0f,0f,0f))
+            .into(imageView)
+    }
     private fun jenisKelamin():ArrayList<String>{
         var jKel = ArrayList<String>()
         jKel.add("Laki-laki")

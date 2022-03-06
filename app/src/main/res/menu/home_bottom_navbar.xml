@@ -4,21 +4,21 @@
     <item
         android:id="@+id/navHome"
         android:title="Beranda"
-        android:icon="@drawable/icon_home"
+        android:icon="@drawable/icon_navbar_home"
         />
     <item
         android:id="@+id/navDiscovery"
         android:title="Jelajahi"
-        android:icon="@drawable/icon_discovery"
+        android:icon="@drawable/icon_navbar_discover"
         />
     <item
         android:id="@+id/navChat"
         android:title="Pesan"
-        android:icon="@drawable/icon_chat"
+        android:icon="@drawable/icon_navbar_chat"
         />
     <item
         android:id="@+id/navProfile"
         android:title="Profil"
-        android:icon="@drawable/icon_user"
+        android:icon="@drawable/icon_navbar_user"
         />
 </menu>

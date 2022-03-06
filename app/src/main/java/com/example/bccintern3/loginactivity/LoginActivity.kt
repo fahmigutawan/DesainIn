@@ -1,13 +1,18 @@
 package com.example.bccintern3.loginactivity
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.AttributeSet
+import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bccintern2.firsttime.OnboardActivity
+import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
 import com.example.bccintern3.home.HomeActivity
 import com.example.bccintern3.invisiblefunction.DbReference
@@ -24,6 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
 
 class LoginActivity:AppCompatActivity() {
     private lateinit var emailInput: TextInputEditText
@@ -35,6 +41,7 @@ class LoginActivity:AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var dbReference: DbReference
     private lateinit var loadAct: LoadActivity
+    private lateinit var imageView: ImageView
 
     fun init() {
         emailInput = findViewById(R.id.loginactivity_emil_et)
@@ -45,6 +52,7 @@ class LoginActivity:AppCompatActivity() {
         fbAuth = FirebaseAuth.getInstance()
         dbReference = DbReference()
         loadAct = LoadActivity()
+        imageView = findViewById(R.id.loginactivity_imageiv)
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -52,12 +60,21 @@ class LoginActivity:AppCompatActivity() {
             .build()
         googleSignInClient = GoogleSignIn.getClient(this,gso)
     }
+    fun setImage(){
+        Picasso
+            .get()
+            .load(R.drawable.logo)
+            .resize(420,420)
+            .transform(RoundCornerRect(60f,0f,0f,0f,0f))
+            .into(imageView)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
 
         init()
+        setImage()
         runClickListener()
     }
 
@@ -169,6 +186,11 @@ class LoginActivity:AppCompatActivity() {
         }.addOnSuccessListener {
             checkFirstTimeLogin()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        loadAct.loadActivityDisposable(this,HomeActivity::class.java,this,true)
     }
 
     companion object {

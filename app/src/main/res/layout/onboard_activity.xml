@@ -7,80 +7,81 @@
     android:background="@color/white"
     android:layoutAnimation="@anim/slidein_right_to_left">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="16dp"
+            android:gravity="end"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/firsttimelogin_signout_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
                 android:layout_gravity="end"
-                android:layout_margin="16dp"
-                android:gravity="end"
-                android:orientation="vertical">
+                android:layout_marginLeft="32dp"
+                android:layout_weight="0"
+                android:background="@drawable/universal_red_button"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/firsttimelogin_signout_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:layout_marginLeft="32dp"
-                    android:layout_weight="0"
-                    android:background="@drawable/universal_red_button"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:text="Logout"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="12dp" />
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="12dp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/firsttimelogin_pass_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:background="@drawable/universal_darkblue_button"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:text="Lewati"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="12dp" />
-            </LinearLayout>
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/firsttimelogin_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/firsttimelogin_next_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="32dp"
-                android:background="@drawable/universal_darkblue_button"
-                android:fontFamily="@font/inter_bold"
-                android:text="Selanjutnya"
+                android:id="@+id/firsttimelogin_pass_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:background="@drawable/universal_yellow_button"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Lewati"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16dp" />
+                android:textColor="@color/black"
+                android:textSize="12dp" />
         </LinearLayout>
-    </ScrollView>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/firsttimelogin_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/firsttimelogin_next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/universal_yellow_button"
+            android:fontFamily="@font/inter_bold"
+            android:text="Selanjutnya"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,6 @@ class HomeFragmentFilled(private var flManager: FragmentManager,
                          private var search:TextInputEditText,
                          private var thisContext: Context,
                          private var navbar:BottomNavigationView):Fragment(R.layout.home_homefragment_filled) {
-    private lateinit var handler:BackHandler
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -25,7 +24,7 @@ class HomeFragmentFilled(private var flManager: FragmentManager,
     private fun runBackHandler(context: Context){
         val back = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                handler = context as BackHandler
+                val handler = context as BackHandler
                 search.setText("")
                 handler.loadFragment(flManager,R.id.home_homefragment_fl,HomeFragmentNotFilled(flManager,activity,thisContext,navbar))
             }

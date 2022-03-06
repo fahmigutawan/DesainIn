@@ -1,10 +1,17 @@
 package com.example.bccintern3.home
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.os.Handler
+import android.support.annotation.DrawableRes
+import android.support.annotation.IdRes
 import android.view.MenuItem
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.children
 import androidx.fragment.app.FragmentManager
+import com.example.bccintern2.home.ProfileFragment
 import com.example.bccintern3.R
 import com.example.bccintern3.home.discovery.DiscoveryFragmentDefault
 import com.example.bccintern3.home.home.HomeFragment
@@ -15,6 +22,7 @@ import com.example.bccintern3.loginactivity.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.auth.FirebaseAuth
+import com.squareup.picasso.Picasso
 
 class HomeActivity:
     AppCompatActivity(),
@@ -28,8 +36,6 @@ class HomeActivity:
     private lateinit var loadAct:LoadActivity
     private lateinit var homeFragment: HomeFragment
     private lateinit var discoveryFragment:DiscoveryFragmentDefault
-    //private lateinit var chatFragment:Fragment
-    //private lateinit var profile:Fragment
     private lateinit var fbAuth:FirebaseAuth
 
     fun init() {
@@ -42,6 +48,8 @@ class HomeActivity:
         discoveryFragment = DiscoveryFragmentDefault(parentFlManager,this,botNavbar,this)
         loadFrag.transfer(parentFlManager,fragLayout,homeFragment)
         fbAuth = FirebaseAuth.getInstance()
+
+        botNavbar.itemIconTintList=null
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,31 +57,33 @@ class HomeActivity:
         init()
         runNavbarListener()
     }
-    private fun runSpecialBackHandler(){
-
-    }
     private fun runNavbarListener(){
+
         botNavbar.setOnItemSelectedListener(object:NavigationBarView.OnItemSelectedListener{
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 val id = item.itemId
 
                 when(id){
                     R.id.navHome->{
-                        loadFrag.transfer(parentFlManager,fragLayout,homeFragment)
+                        Handler().postDelayed({
+                            loadFrag.transfer(parentFlManager,fragLayout,homeFragment)
+                                              },1000)
                     }
                     R.id.navDiscovery->{
-                        loadFrag.transfer(parentFlManager,fragLayout,discoveryFragment)
+                        Handler().postDelayed({
+                            loadFrag.transfer(parentFlManager,fragLayout,discoveryFragment)
+                                              },1000)
                     }
                     R.id.navChat->{
 
                     }
                     R.id.navProfile->{
-                        if(fbAuth.currentUser==null){
+                        Handler().postDelayed({if(fbAuth.currentUser==null){
                             loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,true)
                         }
                         else{
-
-                        }
+                            loadFrag.transfer(parentFlManager,R.id.homeactivity_flmanager,ProfileFragment(thisContext,thisContext))
+                        }},1000)
                     }
                 }
 
@@ -81,8 +91,5 @@ class HomeActivity:
             }
 
         })
-    }
-    private fun searchData(){
-
     }
 }

@@ -18,4 +18,11 @@
     <color name="blue_dark">#02198b</color>
     <color name="blue_navy">#02055a</color>
     <color name="blue_cyan">#3F7FFF</color>
+    <color name="color_palet_blue">#395E81</color>
+    <color name="color_palet_yellow">#FFDC5D</color>
+    <color name="color_palet_bluedark">#172447</color>
+    <color name="color_palet_white2">#F3F9FF</color>
+    <color name="color_palet_white3">#F9FAFA</color>
+    <color name="color_palet_darkgray">#403F44</color>
+    <color name="color_palet_midgray">#9C9898</color>
 </resources>

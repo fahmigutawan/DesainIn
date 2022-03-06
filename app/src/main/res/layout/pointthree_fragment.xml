@@ -17,6 +17,7 @@
         >
 
         <ImageView
+            android:id="@+id/onboardingthree_image"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +26,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOREM IPSUM"
+            android:text="Order"
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_bold"
             android:textSize="36dp"
@@ -38,7 +39,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
+            android:text="Memudahkan Anda dalam bertransaksi desain sesuai dengan keinginan."
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_medium"
             android:textSize="14dp"

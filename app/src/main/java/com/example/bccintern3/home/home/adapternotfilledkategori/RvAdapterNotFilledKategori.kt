@@ -1,14 +1,21 @@
 package com.example.bccintern3.home.home.adapternotfilledkategori
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlin.random.Random
 
 class RvAdapterNotFilledKategori(private var parentView:View,
-                                 private var mainFlManager:FragmentManager)
+                                 private var mainFlManager:FragmentManager,
+                                 private var thisCOntext:Context,
+                                 private var navbar:BottomNavigationView,
+                                 private var activity: AppCompatActivity
+                                 )
     : RecyclerView.Adapter<RvAdapterNotFilledKategoriViewHolder>()
 
 {
@@ -42,7 +49,11 @@ class RvAdapterNotFilledKategori(private var parentView:View,
             LayoutInflater.from(parent.context),
             parent,
             parentView,
-            mainFlManager)
+            mainFlManager,
+            thisCOntext,
+            navbar,
+            activity
+            )
     }
     override fun onBindViewHolder(holder: RvAdapterNotFilledKategoriViewHolder, position: Int) {
         holder.bind(indexRandomized.get(position))

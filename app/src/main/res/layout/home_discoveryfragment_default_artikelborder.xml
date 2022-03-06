@@ -7,6 +7,11 @@
     android:layout_gravity="center">
 
     <LinearLayout
+        android:clickable="true"
+        android:background="@drawable/universal_ripple_rv_background"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/discoveryfragment_default_artikelborder_clickarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -60,8 +65,7 @@
                 android:paddingRight="8dp"
                 android:text="penulis"
                 android:textColor="@color/black"
-                android:textSize="8dp"
-                android:layout_marginBottom="32dp"/>
+                android:textSize="8dp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

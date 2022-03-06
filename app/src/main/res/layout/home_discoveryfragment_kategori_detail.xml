@@ -34,15 +34,16 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/discoveryfragment_kategoridetail_banner_vp"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="@color/light_gray">
-
+                    android:layout_height="wrap_content"
+                    >
                 </androidx.viewpager2.widget.ViewPager2>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="32dp"
+                    >
 
                     <TextView
                         android:id="@+id/discoveryfragment_kategoridetail_deskripsi_tv"
@@ -51,7 +52,6 @@
                         android:layout_weight="1"
                         android:layout_marginTop="32dp"
                         android:fontFamily="@font/poppins_reguler"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id mattis diam. Phasellus a aliquam risus. Nulla ac leo non metus eleifend pretium. Morbi interdum nibh non euismod tristique. Mauris ultrices, sapien sed tincidunt luctus, mi tellus ullamcorper nulla, id ullamcorper risus mauris ultricies orci. Phasellus quis lacinia risus. Fusce non posuere lectus, sit amet laoreet lorem. Duis rutrum, dui sagittis aliquam commodo, augue libero blandit justo, et sollicitudin ipsum justo vitae diam."
                         android:textColor="@color/black" />
 
                     <Button
@@ -64,8 +64,8 @@
                         android:fontFamily="@font/inter_bold"
                         android:textSize="16dp"
                         android:textAllCaps="false"
-                        android:background="@drawable/universal_darkblue_button"
-                        android:textColor="@color/white"/>
+                        android:background="@drawable/universal_yellow_button"
+                        android:textColor="@color/black"/>
                 </LinearLayout>
 
             </LinearLayout>

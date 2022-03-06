@@ -4,15 +4,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern3.invisiblefunction.DbReference
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
 class RvAdapterDefaultArticle(private var parentView: View,
-                              private var mainFlManager: FragmentManager
+                              private var mainFlManager: FragmentManager,
+                              private var activity:AppCompatActivity,
+                              private var navbar:BottomNavigationView
                               ):RecyclerView.Adapter<RvAdapterDefaultArticleViewHolder>() {
     private lateinit var arrAtribut:ArrayList<ArrayList<String>>
     private lateinit var dbRef:DbReference
@@ -20,6 +24,15 @@ class RvAdapterDefaultArticle(private var parentView: View,
 
     fun init(){
         arrAtribut = ArrayList()
+        arrAtribut.add(ArrayList())
+        arrAtribut.add(ArrayList())
+        arrAtribut.add(ArrayList())
+        arrAtribut.add(ArrayList())
+        arrAtribut.add(ArrayList())
+        arrAtribut.add(ArrayList())
+        arrAtribut.add(ArrayList())
+        arrAtribut.add(ArrayList())
+
         dbRef = DbReference()
     }
 
@@ -29,10 +42,17 @@ class RvAdapterDefaultArticle(private var parentView: View,
             LayoutInflater.from(parent.context),
             parent,
             parentView,
-            mainFlManager
+            mainFlManager,
+            activity,
+            navbar
         )
     }
     override fun onBindViewHolder(holder: RvAdapterDefaultArticleViewHolder, position: Int) {
+        var j=0
+        while(j<arrAtribut.size){
+            arrAtribut.get(j).clear()
+            j++
+        }
         val ref = dbRef.refArticle()
         val position = position
 
@@ -53,6 +73,7 @@ class RvAdapterDefaultArticle(private var parentView: View,
                                 arrAtribut.get(4).add(disini.child("hari").getValue().toString())
                                 arrAtribut.get(5).add(disini.child("bulan").getValue().toString())
                                 arrAtribut.get(6).add(disini.child("tahun").getValue().toString())
+                                arrAtribut.get(7).add(disini.child("id").getValue().toString())
 
                                 if(arrAtribut.get(0).size==maxCount) break
                             }
@@ -62,7 +83,16 @@ class RvAdapterDefaultArticle(private var parentView: View,
                     }
                     if(arrAtribut.get(0).size==maxCount) break
                 }
-                holder.bind()
+                holder.bind(
+                    arrAtribut.get(0).get(position),
+                    arrAtribut.get(1).get(position),
+                    arrAtribut.get(2).get(position),
+                    arrAtribut.get(3).get(position),
+                    arrAtribut.get(4).get(position),
+                    arrAtribut.get(5).get(position),
+                    arrAtribut.get(6).get(position),
+                    arrAtribut.get(7).get(position)
+                )
                 ref.removeEventListener(this)
             }
             override fun onCancelled(error: DatabaseError) {
