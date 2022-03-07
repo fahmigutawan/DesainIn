@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bccintern3.R
 import com.example.bccintern3.home.HomeActivity
@@ -20,8 +21,8 @@ class OnboardActivity:AppCompatActivity() {
     private var fragmentNumber=1
     private var manager = supportFragmentManager
     private lateinit var nxtBtn:Button
-    private lateinit var passBtn:Button
-    private lateinit var signoutBtn:Button
+    private lateinit var passBtn:TextView
+    private lateinit var signoutBtn:TextView
     private lateinit var loadActivity: LoadActivity
     private var point1 = PointOne()
     private var point2 = PointTwo()
@@ -42,8 +43,8 @@ class OnboardActivity:AppCompatActivity() {
 
         //deklarasi
         nxtBtn = findViewById(R.id.firsttimelogin_next_btn)
-        passBtn = findViewById(R.id.firsttimelogin_pass_btn)
-        signoutBtn = findViewById(R.id.firsttimelogin_signout_btn)
+        passBtn = findViewById(R.id.onboardactivity_lewati_tv)
+        signoutBtn = findViewById(R.id.onboardactivity_logout_tv)
         dbRef = DbReference()
         fbAuth = FirebaseAuth.getInstance()
         mGoogleSignInClient = GoogleSignIn.getClient(this,gso)
@@ -92,7 +93,9 @@ class OnboardActivity:AppCompatActivity() {
         }
         signoutBtn.setOnClickListener {
             signOut()
-            loadActivity(LoginActivity::class.java,true)
+            Handler().postDelayed({
+                loadActivity(LoginActivity::class.java,true)
+            },1500)
         }
 
     }

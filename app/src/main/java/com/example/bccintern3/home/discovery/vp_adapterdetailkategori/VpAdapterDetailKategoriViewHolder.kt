@@ -28,7 +28,7 @@ class VpAdapterDetailKategoriViewHolder(inflater: LayoutInflater,
 
     fun bind(url:String){
         val width =  parentView.width
-        val height = (width/4*3)
+        val height = (width/16*9)
 
         Picasso
             .get()

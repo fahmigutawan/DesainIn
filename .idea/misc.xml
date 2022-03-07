@@ -49,6 +49,7 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_navbar_discover.xml" value="0.2535" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_navbar_home.xml" value="0.2535" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_navbar_user.xml" value="0.2535" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_noprofile.xml" value="0.202" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_search.xml" value="0.204" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_user.xml" value="0.2145" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/loginsignup_activity_background.xml" value="0.2385" />
@@ -63,15 +64,16 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/firsttime_activity.xml" value="0.16077898550724637" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/firsttime_login.xml" value="0.16077898550724637" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_activity.xml" value="0.25" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfargment_desainer_detail.xml" value="0.25" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfargment_desainer_detail.xml" value="0.18" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment.xml" value="0.23505434782608695" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_.xml" value="0.1766304347826087" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_artikel_detail.xml" value="0.25036603221083453" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_default.xml" value="0.23505434782608695" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_default_artikelborder.xml" value="0.5" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_default_kategoriborder.xml" value="0.27291666666666664" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_desainer_detail_vpborder.xml" value="0.19655797101449277" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_desainer_perkategori.xml" value="0.23505434782608695" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_kategori_detail.xml" value="0.33" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_kategori_detail.xml" value="0.2" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_kategori_detail_border.xml" value="0.12552083333333333" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listartikel.xml" value="0.12552083333333333" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listartikel_borderitem.xml" value="0.23867753623188406" />
@@ -79,15 +81,15 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listkategori.xml" value="0.12552083333333333" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listkategori_borderitem.xml" value="0.33" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_home_fragment.xml" value="0.17980072463768115" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment.xml" value="0.27291666666666664" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment.xml" value="0.22" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_filled.xml" value="0.23505434782608695" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfill_artikel_border.xml" value="0.33" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfill_desainer_border.xml" value="0.12552083333333333" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfill_desainer_border.xml" value="0.5" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfill_kategori_border.xml" value="0.12552083333333333" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfilled.xml" value="0.1" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfilled.xml" value="0.22" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_profilefragment.xml" value="0.22" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/login_activity.xml" value="0.2" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/onboard_activity.xml" value="0.1" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/onboard_activity.xml" value="0.25" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointone_fragment.xml" value="0.33" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointthree_fragment.xml" value="0.12552083333333333" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointtwo_fragment.xml" value="0.12552083333333333" />

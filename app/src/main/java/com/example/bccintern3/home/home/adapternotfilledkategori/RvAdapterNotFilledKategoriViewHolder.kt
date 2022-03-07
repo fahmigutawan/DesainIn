@@ -43,7 +43,7 @@ class RvAdapterNotFilledKategoriViewHolder(inflater: LayoutInflater,
     }
 
     fun bind(index:Int){
-            val tmp=parentView.width/3.7
+            val tmp=parentView.width/4.2
             val width=tmp.toInt()
             val height=tmp.toInt()
             val ref = dbRef.refCategoryPicture()
@@ -52,7 +52,7 @@ class RvAdapterNotFilledKategoriViewHolder(inflater: LayoutInflater,
                     Picasso
                         .get()
                         .load(snapshot.child(index.toString()).child("icon").getValue().toString())
-                        .transform(RoundCornerRect(30f,0f,0f,0f,0f))
+                        .transform(RoundCornerRect(20f,0f,0f,0f,0f))
                         .resize(width,height)
                         .into(imageView)
                     runClickListener(index)

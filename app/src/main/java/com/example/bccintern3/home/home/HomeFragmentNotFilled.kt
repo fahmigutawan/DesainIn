@@ -22,11 +22,17 @@ import com.example.bccintern3.home.discovery.DiscoveryFragmentListArtikel
 import com.example.bccintern3.home.discovery.DiscoveryFragmentListKategori
 import com.example.bccintern3.home.discovery.vp_adapterdetailkategori.VpAdapterDetailKategori
 import com.example.bccintern3.home.home.adapternotfilledartikel.RvAdapterNotFilledArtikel
+import com.example.bccintern3.home.home.adapternotfilleddesainer.RvAdapterNotFilledDesainer
 import com.example.bccintern3.home.home.adapternotfilledkategori.RvAdapterNotFilledKategori
 import com.example.bccintern3.home.home.vp_adapternotfilledbanner.VpAdapterNotFilledBanner
 import com.example.bccintern3.invisiblefunction.BackHandler
+import com.example.bccintern3.invisiblefunction.DbReference
 import com.example.bccintern3.invisiblefunction.LoadFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.getValue
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
@@ -37,6 +43,7 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
 
     private lateinit var artikelAdapter:RvAdapterNotFilledArtikel
     private lateinit var kategoriAdapter:RvAdapterNotFilledKategori
+    private lateinit var desainerAdapter:RvAdapterNotFilledDesainer
     private lateinit var vpAdapter:VpAdapterNotFilledBanner
     private lateinit var kategoriRv:RecyclerView
     private lateinit var artikelRv:RecyclerView
@@ -47,12 +54,14 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
     private lateinit var kategoriLainTv:TextView
     private lateinit var loadFrag:LoadFragment
     private lateinit var storageRef:StorageReference
+    private lateinit var dbRef:DbReference
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init(view)
         setKategoriView(view)
         setArtikelView(view)
+        setDesainerView(view)
         loadViewPager(view)
         runTouchListener()
     }
@@ -70,6 +79,7 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
         kategoriLainTv = view.findViewById(R.id.homefragment_notfill_kategorilain_tv)
         loadFrag = LoadFragment()
         storageRef = FirebaseStorage.getInstance().getReference()
+        dbRef = DbReference()
     }
     fun runTouchListener(){
         artikelLainTv.setOnClickListener {
@@ -109,6 +119,54 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
                 artikelRv.adapter = artikelAdapter
             }
         })
+    }
+    fun setDesainerView(view: View){
+        view.viewTreeObserver.addOnGlobalLayoutListener(object :ViewTreeObserver.OnGlobalLayoutListener{
+            override fun onGlobalLayout() {
+                view.viewTreeObserver.removeOnGlobalLayoutListener(this)
+
+                val ref = dbRef.refDesignerNode()
+                ref.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        ref.removeEventListener(this)
+                        val desainerNode = ArrayList<String>()
+                        val idKategori = ArrayList<String>()
+
+                        /**iterasi perkategori**/
+                        for(i:DataSnapshot in snapshot.children){
+
+                            /**iterasi desainer**/
+                            for (j:DataSnapshot in i.children){
+                                desainerNode.add(j.child("uid").getValue().toString())
+                                idKategori.add(j.child("id_kategori").getValue().toString())
+                            }
+                        }
+
+                        desainerAdapter = RvAdapterNotFilledDesainer(
+                            view,
+                            flManager,
+                            navbar,
+                            activity,
+                            desainerNode,
+                            idKategori,
+                            thisContext)
+
+                        val gridLayoutManager = GridLayoutManager(
+                            thisContext,
+                            3,
+                            GridLayoutManager.VERTICAL,
+                            false)
+
+                        desainerRv.layoutManager = gridLayoutManager
+                        desainerRv.adapter = desainerAdapter
+                    }
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+                })
+            }
+        })
+
     }
     fun loadViewPager(view:View){
         val ref = storageRef.child("home_banner")

@@ -47,7 +47,7 @@ class RvAdapterDefaultKategoriViewHolder(inflater:LayoutInflater,
     }
     fun bind(index:Int){
         val w = parentView.width
-        val size = w/4
+        val size = (w/4.2).toInt()
         val ref = dbRef.refCategoryPicture()
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -55,7 +55,7 @@ class RvAdapterDefaultKategoriViewHolder(inflater:LayoutInflater,
                 Picasso
                     .get()
                     .load(url)
-                    .transform(RoundCornerRect(30f,0f,0f,0f,0f))
+                    .transform(RoundCornerRect(20f,0f,0f,0f,0f))
                     .resize(size,size)
                     .into(imageView)
                 runClickListener(index)

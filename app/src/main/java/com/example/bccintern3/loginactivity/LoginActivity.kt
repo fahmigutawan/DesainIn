@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.View
+import android.view.ViewTreeObserver
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bccintern2.firsttime.OnboardActivity
+import com.example.bccintern2.picasso.CircleTransform
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
 import com.example.bccintern3.home.HomeActivity
@@ -61,12 +63,19 @@ class LoginActivity:AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this,gso)
     }
     fun setImage(){
-        Picasso
-            .get()
-            .load(R.drawable.logo)
-            .resize(420,420)
-            .transform(RoundCornerRect(60f,0f,0f,0f,0f))
-            .into(imageView)
+        imageView.viewTreeObserver.addOnGlobalLayoutListener(object:ViewTreeObserver.OnGlobalLayoutListener{
+            override fun onGlobalLayout() {
+                imageView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                val size = imageView.width/3
+                Picasso
+                    .get()
+                    .load(R.drawable.logo)
+                    .transform(RoundCornerRect(30f,0f,0f,0f,0f))
+                    .resize(size,size)
+                    .into(imageView)
+            }
+        })
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -188,10 +197,10 @@ class LoginActivity:AppCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        loadAct.loadActivityDisposable(this,HomeActivity::class.java,this,true)
-    }
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+//        loadAct.loadActivityDisposable(this,HomeActivity::class.java,this,true)
+//    }
 
     companion object {
         private const val RC_SIGN_IN = 120

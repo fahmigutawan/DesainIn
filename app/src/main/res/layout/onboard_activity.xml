@@ -18,48 +18,39 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_margin="16dp"
             android:gravity="end"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/firsttimelogin_signout_btn"
+
+            <TextView
+                android:id="@+id/onboardactivity_logout_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:layout_gravity="end"
-                android:layout_marginLeft="32dp"
-                android:layout_weight="0"
-                android:background="@drawable/universal_red_button"
-                android:fontFamily="@font/poppins_semibold"
-                android:gravity="center_vertical"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
+                android:layout_height="wrap_content"
                 android:text="Logout"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:clickable="true"
+                android:textColor="#8A0000"
+                android:textSize="14dp"
+                android:fontFamily="@font/poppins_semibold"/>
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="12dp" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/firsttimelogin_pass_btn"
+            <TextView
+                android:id="@+id/onboardactivity_lewati_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:layout_gravity="end"
-                android:background="@drawable/universal_yellow_button"
-                android:fontFamily="@font/poppins_semibold"
-                android:gravity="center_vertical"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
+                android:layout_height="wrap_content"
                 android:text="Lewati"
-                android:textAllCaps="false"
+                android:clickable="true"
                 android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:textSize="14dp"
+                android:fontFamily="@font/poppins_semibold"
+                />
+
         </LinearLayout>
 
         <androidx.fragment.app.FragmentContainerView
@@ -72,9 +63,9 @@
             android:id="@+id/firsttimelogin_next_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginRight="32dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/universal_yellow_button"
             android:fontFamily="@font/inter_bold"

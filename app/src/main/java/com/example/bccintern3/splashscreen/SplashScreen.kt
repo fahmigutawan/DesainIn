@@ -41,7 +41,7 @@ class SplashScreen: AppCompatActivity() {
         Picasso
             .get()
             .load(R.drawable.logo)
-            .resize(420,420)
+            .resize(256,256)
             .transform(RoundCornerRect(60f,0f,0f,0f,0f))
             .into(imageView)
 

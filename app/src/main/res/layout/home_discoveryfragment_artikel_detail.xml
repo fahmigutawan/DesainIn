@@ -27,24 +27,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/universal_white_button"
+                android:orientation="vertical"
+                android:padding="16dp">
+
                 <TextView
                     android:id="@+id/discoveryfragment_artikeldetail_judultv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text=". . ."
-                    android:textSize="16dp"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/poppins_semibold"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="16dp"
-                android:background="@drawable/universal_white_button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="16dp"
-                >
+                    android:textSize="16dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -55,19 +54,18 @@
                         android:id="@+id/discoveryfragment_artikeldetail_penulistv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/blue_cyan"
-                        android:textSize="12dp"
                         android:layout_marginRight="8dp"
                         android:fontFamily="@font/poppins_reguler"
-                         />
+                        android:textColor="@color/blue_cyan"
+                        android:textSize="12dp" />
+
                     <TextView
                         android:id="@+id/discoveryfragment_artikeldetail_tanggaltv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="10dp"
                         android:fontFamily="@font/poppins_reguler"
-                         />
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
                 </LinearLayout>
 
                 <TextView

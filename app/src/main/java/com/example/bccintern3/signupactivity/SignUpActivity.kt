@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.view.ViewTreeObserver
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bccintern2.picasso.RoundCornerRect
@@ -57,12 +58,18 @@ class SignUpActivity:AppCompatActivity(R.layout.signup_activity) {
         jenisKlmn.setAdapter(klmnAdapter)
     }
     fun setImage(){
-        Picasso
-            .get()
-            .load(R.drawable.logo)
-            .resize(420,420)
-            .transform(RoundCornerRect(60f,0f,0f,0f,0f))
-            .into(imageView)
+            imageView.viewTreeObserver.addOnGlobalLayoutListener(object:ViewTreeObserver.OnGlobalLayoutListener{
+            override fun onGlobalLayout() {
+                val size=imageView.width/3
+                imageView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                Picasso
+                    .get()
+                    .load(R.drawable.logo)
+                    .resize(size,size)
+                    .transform(RoundCornerRect(30f,0f,0f,0f,0f))
+                    .into(imageView)
+            }
+        })
     }
     private fun jenisKelamin():ArrayList<String>{
         var jKel = ArrayList<String>()

@@ -62,31 +62,40 @@ class HomeActivity:
         botNavbar.setOnItemSelectedListener(object:NavigationBarView.OnItemSelectedListener{
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 val id = item.itemId
+                var lastId=0
 
                 when(id){
                     R.id.navHome->{
+                        lastId=0
                         Handler().postDelayed({
                             loadFrag.transfer(parentFlManager,fragLayout,homeFragment)
-                                              },1000)
+                                              },500)
                     }
                     R.id.navDiscovery->{
+                        lastId=1
                         Handler().postDelayed({
                             loadFrag.transfer(parentFlManager,fragLayout,discoveryFragment)
-                                              },1000)
+                                              },500)
                     }
                     R.id.navChat->{
+                        lastId=2
 
                     }
                     R.id.navProfile->{
-                        Handler().postDelayed({if(fbAuth.currentUser==null){
-                            loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,true)
-                        }
-                        else{
-                            loadFrag.transfer(parentFlManager,R.id.homeactivity_flmanager,ProfileFragment(thisContext,thisContext))
-                        }},1000)
+                        Handler().postDelayed({
+                            if(fbAuth.currentUser==null){
+                                loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,false)
+                                Handler().postDelayed({
+                                    botNavbar.menu.getItem(3).setChecked(false)
+                                    botNavbar.menu.getItem(lastId).setChecked(true)
+                                },500)
+                            }
+                            else{
+                                loadFrag.transfer(parentFlManager,R.id.homeactivity_flmanager,ProfileFragment(thisContext,thisContext))
+                            }
+                                              },500)
                     }
                 }
-
                 return true
             }
 

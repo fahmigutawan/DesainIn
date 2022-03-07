@@ -22,9 +22,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/mid_gray_darker">
+                android:background="@color/color_palet_blue">
 
                 <RadioButton
                     android:id="@+id/discoveryfragment_desainerdetail_bookmark_rb"
@@ -36,12 +36,17 @@
                     android:button="@drawable/home_discoveryfragment_radiobutton_background"
                     />
 
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/discoveryfragment_desainerdetail_banner_vp"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="16dp"
-                    android:background="@color/light_gray"/>
+                    android:layout_height="match_parent">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/discoveryfragment_desainerdetail_banner_vp"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_margin="16dp" />
+                </FrameLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -51,6 +56,7 @@
                 android:padding="32dp">
 
                 <LinearLayout
+                    android:id="@+id/discoveryfragment_desainerdetail_widthparam_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
@@ -60,7 +66,7 @@
                         android:id="@+id/discoveryfragment_desainerdetail_profil_iv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        android:background="@drawable/icon_noprofile" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -73,7 +79,7 @@
                             android:id="@+id/discoveryfragment_desainerdetail_nama_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Nama desainer"
+                            android:text=". . ."
                             android:fontFamily="@font/poppins_semibold"
                             android:textSize="18dp"
                             android:textColor="@color/black"/>
@@ -83,7 +89,7 @@
                             android:id="@+id/discoveryfragment_desainerdetail_kategori_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Kategori desainer"
+                            android:text=". . ."
                             android:fontFamily="@font/poppins_reguler"
                             android:textColor="@color/black"/>
                     </LinearLayout>
@@ -102,7 +108,7 @@
                     android:id="@+id/discoveryfragment_desainerdetail_deskripsi_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id mattis diam. Phasellus a aliquam risus. "
+                    android:text=". . ."
                     android:textColor="@color/dark_gray"
                     android:textSize="14dp"
                     android:fontFamily="@font/poppins_medium"
@@ -117,17 +123,34 @@
                     android:text="Kota ..."
                     android:fontFamily="@font/poppins_reguler"
                     android:textColor="@color/black"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:textSize="14dp"/>
 
-                <TextView
-                    android:id="@+id/discoveryfragment_desaindetail_harga_tv"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mulai dari Rp. ..."
-                    android:drawableStart="@drawable/icon_money"
-                    android:fontFamily="@font/poppins_reguler"
-                    android:textColor="@color/black"
-                    android:gravity="center_vertical"/>
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/icon_money"
+                        android:fontFamily="@font/poppins_reguler"
+                        android:gravity="center_vertical"
+                        android:text="Mulai dari Rp."
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/discoveryfragment_desainerdetail_harga_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_reguler"
+                        android:gravity="center_vertical"
+                        android:text=". . ."
+                        android:textColor="@color/black"
+                        android:textSize="14dp"/>
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -158,7 +181,7 @@
                         android:fontFamily="@font/inter_bold"
                         android:textSize="16dp"
                         android:textAllCaps="false"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/black"/>
                 </LinearLayout>
 
 

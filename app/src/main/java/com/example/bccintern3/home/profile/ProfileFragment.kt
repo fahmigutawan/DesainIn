@@ -110,6 +110,7 @@ class ProfileFragment(
             }
         }
         activity.finish()
-        loadAct.loadActivityDisposable(thisContext,HomeActivity::class.java,activity,true)
+
+        loadAct.loadActivityComplete(thisContext,HomeActivity::class.java,activity,true,1500)
     }
 }
