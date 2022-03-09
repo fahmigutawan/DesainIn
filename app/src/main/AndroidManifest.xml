@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bccintern3">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BCCIntern2">
+        <service
+            android:name=".nonactivity_invisiblefunction.FbMessagingService"
+            android:permission="TODO"
+            tools:ignore="ExportedService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <activity
-            android:name=".splashscreen.SplashScreen"
+            android:name=".activity_splashscreen.SplashScreen"
             android:exported="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
@@ -19,9 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".home.HomeActivity"/>
-        <activity android:name=".signupactivity.SignUpActivity"/>
-        <activity android:name=".loginactivity.LoginActivity"/>
+        <activity android:name=".activity_home.HomeActivity"/>
+        <activity android:name=".activity_signup.SignUpActivity"/>
+        <activity android:name=".activity_login.LoginActivity"/>
         <activity android:name="com.example.bccintern2.firsttime.OnboardActivity"/>
         <activity android:name="com.example.bccintern2.home.EditProfileActivity"/>
     </application>

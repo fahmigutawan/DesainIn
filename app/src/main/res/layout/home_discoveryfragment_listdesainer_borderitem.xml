@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:id="@+id/discoveryfragment_listdesainer_border_clickarea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/universal_ripple_rv_background"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/discoveryfragment_listdesainer_border_imageiv"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:background="@drawable/icon_noprofile"/>
+
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:id="@+id/discoveryfragment_listdesainer_border_namatv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=". . ."
+                android:maxLines="1"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/discoveryfragment_listdesainer_border_kategoritv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=". . ."
+                android:maxLines="1"
+                android:textSize="14dp"
+                android:fontFamily="@font/poppins_reguler"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/discoveryfragment_listdesainer_border_hargatv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=". . ."
+                android:maxLines="1"
+                android:textSize="12dp"
+                android:fontFamily="@font/poppins_reguler"
+                android:textColor="@color/blue_cyan"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
