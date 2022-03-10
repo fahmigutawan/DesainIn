@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Desain.In</string>
+    <string name="app_name">DesainIn</string>
     <string name="home_fragment">homefrag</string>
     <string name="discovery_fragment">discoveryfrag</string>
     <string name="chat_fragment">chatfrag</string>

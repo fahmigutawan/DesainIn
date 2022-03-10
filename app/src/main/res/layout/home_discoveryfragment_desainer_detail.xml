@@ -151,6 +151,8 @@
                     android:padding="16dp">
 
                     <Button
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
                         android:id="@+id/discoveryfragment_desainerdetail_chat_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -163,6 +165,8 @@
                         android:textSize="16dp" />
 
                     <Button
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
                         android:id="@+id/discoveryfragment_desainerdetail_order_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

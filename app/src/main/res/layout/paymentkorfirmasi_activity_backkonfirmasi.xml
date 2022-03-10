@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:background="@drawable/universal_white_textview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sfpro_display_medium"
+            android:textSize="16dp"
+            android:text="Dengan kembali, informasi\n  pembayaran akan dihapus? " />
+
+        <LinearLayout
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:elevation="2dp"
+                android:id="@+id/paymentactivity_backkonfirmasi_hapusbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hapus"
+                android:layout_margin="8dp"
+                android:textColor="@color/color_palet_white3"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                android:fontFamily="@font/sfpro_display_medium"
+                android:background="@drawable/universal_red_button"
+                />
+
+            <Button
+                android:elevation="2dp"
+                android:id="@+id/paymentactivity_backkonfirmasi_batalbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batal"
+                android:layout_margin="8dp"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                android:fontFamily="@font/sfpro_display_medium"
+                android:background="@drawable/universal_yellow_lighter_button"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

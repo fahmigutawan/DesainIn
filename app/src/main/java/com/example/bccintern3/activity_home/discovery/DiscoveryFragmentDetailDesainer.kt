@@ -1,9 +1,7 @@
 package com.example.bccintern3.activity_home.discovery
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.*
@@ -15,9 +13,9 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.bccintern2.picasso.CircleTransform
 import com.example.bccintern3.R
 import com.example.bccintern3.activity_chat.ChatActivity
-import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.vp_adapterdetaildesainer.VpAdapterDetailDesainer
 import com.example.bccintern3.activity_login.LoginActivity
+import com.example.bccintern3.dummyactivity_payment.DummyPaymentActivity
 import com.example.bccintern3.nonactivity_invisiblefunction.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -248,6 +246,23 @@ class DiscoveryFragmentDetailDesainer(flManager:FragmentManager,
                 Toast.makeText(thisContext,"Harap login untuk mengirim pesan",Toast.LENGTH_SHORT).show()
                 loadAct.loadActivityDelayable(thisContext,LoginActivity::class.java,1000)
             }
+        }
+        orderBtn.setOnClickListener {
+            if(fbAuth.currentUser?.uid != null){
+                if(fbAuth.currentUser?.uid.toString() != uidSelected){
+                    var bundle = Bundle()
+                    bundle.putString("uid",uidSelected)
+                    loadAct.loadActivityCompleteWithBundle(thisContext,DummyPaymentActivity::class.java,activity,false,1000,bundle)
+                }
+                else{
+                    Toast.makeText(appContext,"Tidak bisa order dengan diri sendiri",Toast.LENGTH_SHORT).show()
+                }
+            }
+            else{
+                Toast.makeText(thisContext,"Harap login untuk order jasa desainer",Toast.LENGTH_SHORT).show()
+                loadAct.loadActivityDelayable(thisContext,LoginActivity::class.java,1000)
+            }
+
         }
     }
 }
