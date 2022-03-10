@@ -32,4 +32,14 @@ class LoadActivity {
             }
         },time)
     }
+    public fun loadActivityCompleteWithExtras(thisContext: Context,cls: Class<*>,parentAppCompat: AppCompatActivity,isDispose: Boolean,time: Long,key:String,value:String){
+        val intent = Intent(thisContext,cls)
+        intent.putExtra(key,value)
+        Handler().postDelayed({
+            thisContext.startActivity(intent)
+            if(isDispose){
+                parentAppCompat.finish()
+            }
+        },time)
+    }
 }

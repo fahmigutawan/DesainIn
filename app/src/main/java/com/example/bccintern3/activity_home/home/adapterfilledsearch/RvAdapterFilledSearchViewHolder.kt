@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bccintern2.picasso.CircleTransform
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentDetailDesainer
@@ -92,7 +93,7 @@ class RvAdapterFilledSearchViewHolder(private var inflater: LayoutInflater,
                 Picasso
                     .get()
                     .load(snapshot.child("icon").getValue().toString())
-                    .transform(RoundCornerRect(30f,0f,0f,0f,0f))
+                    .transform(CircleTransform())
                     .into(img)
 
                 /**set data lain**/

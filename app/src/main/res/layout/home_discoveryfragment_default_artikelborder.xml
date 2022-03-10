@@ -36,36 +36,13 @@
                 android:id="@+id/discoveryfragment_default_artikelborder_titletv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/sfpro_display_medium"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:text="Judul"
                 android:textColor="@color/black"
-                android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/discoveryfragment_default_artikelborder_penulistv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-8dp"
-                android:fontFamily="@font/poppins_reguler"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:text="penulis"
-                android:textColor="@color/blue_cyan"
                 android:textSize="12dp" />
 
-            <TextView
-                android:id="@+id/discoveryfragment_default_artikelborder_tanggaltv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-4dp"
-                android:fontFamily="@font/poppins_reguler"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:text="penulis"
-                android:textColor="@color/black"
-                android:textSize="8dp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

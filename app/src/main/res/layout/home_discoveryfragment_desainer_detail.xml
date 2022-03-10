@@ -26,18 +26,6 @@
                 android:orientation="vertical"
                 android:background="@color/color_palet_blue">
 
-                <androidx.appcompat.widget.AppCompatCheckBox
-                    android:clickable="true"
-                    android:id="@+id/discoveryfragment_desainerdetail_bookmark_cb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginRight="16dp"
-                    android:foreground="@drawable/home_discoveryfragment_desainerdetail_cb_background"
-
-                    />
-
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

@@ -42,7 +42,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="@font/poppins_medium"
+                        android:fontFamily="@font/sfpro_display_medium"
                         android:text="Rekomendasi Desainer"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
@@ -53,10 +53,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:clickable="true"
-                        android:fontFamily="@font/poppins_medium"
+                        android:fontFamily="@font/sfpro_display_medium"
                         android:gravity="end"
                         android:text="Lainnya"
-                        android:textColor="@color/blue_cyan"
+                        android:textColor="@color/color_palet_midgray"
                         android:textSize="14dp" />
                 </LinearLayout>
 
@@ -84,7 +84,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="@font/poppins_medium"
+                        android:fontFamily="@font/sfpro_display_medium"
                         android:text="Artikel untukmu"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
@@ -95,10 +95,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:clickable="true"
-                        android:fontFamily="@font/poppins_medium"
+                        android:fontFamily="@font/sfpro_display_medium"
                         android:gravity="end"
                         android:text="Lainnya"
-                        android:textColor="@color/blue_cyan"
+                        android:textColor="@color/color_palet_midgray"
                         android:textSize="14dp" />
                 </LinearLayout>
 
@@ -125,7 +125,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="@font/poppins_medium"
+                        android:fontFamily="@font/sfpro_display_medium"
                         android:text="Rekomendasi Kategori"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
@@ -136,10 +136,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:clickable="true"
-                        android:fontFamily="@font/poppins_medium"
+                        android:fontFamily="@font/sfpro_display_medium"
                         android:gravity="end"
                         android:text="Lainnya"
-                        android:textColor="@color/blue_cyan"
+                        android:textColor="@color/color_palet_midgray"
                         android:textSize="14dp" />
                 </LinearLayout>
 

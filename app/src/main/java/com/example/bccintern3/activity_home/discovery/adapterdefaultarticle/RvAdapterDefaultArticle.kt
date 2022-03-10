@@ -31,8 +31,6 @@ class RvAdapterDefaultArticle(private var parentView: View,
         arrAtribut.add(ArrayList())
         arrAtribut.add(ArrayList())
         arrAtribut.add(ArrayList())
-        arrAtribut.add(ArrayList())
-        arrAtribut.add(ArrayList())
 
         dbRef = DbReference()
     }
@@ -70,12 +68,10 @@ class RvAdapterDefaultArticle(private var parentView: View,
                             for(disini:DataSnapshot in k.children){
                                 arrAtribut.get(0).add(disini.child("image").getValue().toString())
                                 arrAtribut.get(1).add(disini.child("judul").getValue().toString())
-                                arrAtribut.get(2).add(disini.child("penulis").getValue().toString())
-                                arrAtribut.get(3).add(disini.child("tanggal").getValue().toString())
-                                arrAtribut.get(4).add(disini.child("hari").getValue().toString())
-                                arrAtribut.get(5).add(disini.child("bulan").getValue().toString())
-                                arrAtribut.get(6).add(disini.child("tahun").getValue().toString())
-                                arrAtribut.get(7).add(disini.child("id").getValue().toString())
+                                arrAtribut.get(2).add(disini.child("hari").getValue().toString())
+                                arrAtribut.get(3).add(disini.child("bulan").getValue().toString())
+                                arrAtribut.get(4).add(disini.child("tahun").getValue().toString())
+                                arrAtribut.get(5).add(disini.child("id").getValue().toString())
 
                                 if(arrAtribut.get(0).size==maxCount) break
                             }
@@ -91,9 +87,7 @@ class RvAdapterDefaultArticle(private var parentView: View,
                     arrAtribut.get(2).get(position),
                     arrAtribut.get(3).get(position),
                     arrAtribut.get(4).get(position),
-                    arrAtribut.get(5).get(position),
-                    arrAtribut.get(6).get(position),
-                    arrAtribut.get(7).get(position)
+                    arrAtribut.get(5).get(position)
                 )
                 ref.removeEventListener(this)
             }

@@ -22,7 +22,8 @@
             android:id="@+id/splashscreen_imageview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +31,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/sansita_bold"
             android:gravity="center"
-            android:text="Desain.In"
+            android:text="DesainIn"
             android:textColor="@color/color_palet_blue"
             android:textSize="54dp" />
     </LinearLayout>

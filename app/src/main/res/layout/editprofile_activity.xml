@@ -16,9 +16,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:layout_marginTop="32dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/sfpro_display_black_bold"
             android:gravity="center"
             android:text="Edit Profil"
             android:textColor="@color/black"
@@ -51,7 +52,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_reguler"
+                android:fontFamily="@font/sfpro_display_medium"
                 android:text="Nama lengkap"
                 android:textColor="@color/color_palet_white2"
                 android:textSize="14dp" />
@@ -59,7 +60,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-16dp"
+                android:layout_marginTop="-8dp"
                 android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -67,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/universal_white_textinput"
-                    android:fontFamily="@font/poppins_reguler"
+                    android:fontFamily="@font/sfpro_display_reguler"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:paddingTop="12dp"
@@ -79,7 +80,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_reguler"
+                android:fontFamily="@font/sfpro_display_medium"
                 android:text="Email"
                 android:textColor="@color/color_palet_white2"
                 android:textSize="14dp" />
@@ -87,7 +88,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-16dp"
+                android:layout_marginTop="-8dp"
                 android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -96,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/universal_white_textinput"
                     android:editable="false"
-                    android:fontFamily="@font/poppins_reguler"
+                    android:fontFamily="@font/sfpro_display_reguler"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:paddingTop="12dp"
@@ -108,7 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_reguler"
+                android:fontFamily="@font/sfpro_display_medium"
                 android:text="Nomor telepon"
                 android:textColor="@color/color_palet_white2"
                 android:textSize="14dp" />
@@ -116,7 +117,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-16dp"
+                android:layout_marginTop="-8dp"
                 android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -124,7 +125,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/universal_white_textinput"
-                    android:fontFamily="@font/poppins_reguler"
+                    android:fontFamily="@font/sfpro_display_reguler"
                     android:inputType="phone"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
@@ -141,8 +142,8 @@
                 android:layout_marginLeft="32dp"
                 android:layout_marginTop="64dp"
                 android:layout_marginRight="32dp"
-                android:background="@drawable/universal_yellow_button"
-                android:fontFamily="@font/inter_bold"
+                android:background="@drawable/universal_yellow_lighter_button"
+                android:fontFamily="@font/sfpro_display_medium"
                 android:text="Simpan"
                 android:textAllCaps="false"
                 android:textColor="@color/black"

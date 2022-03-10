@@ -4,6 +4,10 @@
     package="com.example.bccintern3">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,6 +26,7 @@
         </service>
         <activity
             android:name=".activity_splashscreen.SplashScreen"
+            android:launchMode="singleTop"
             android:exported="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
@@ -35,6 +40,13 @@
         <activity android:name=".activity_login.LoginActivity"/>
         <activity android:name="com.example.bccintern2.firsttime.OnboardActivity"/>
         <activity android:name="com.example.bccintern2.home.EditProfileActivity"/>
+        <activity android:name=".activity_chat.ChatActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="CHAT_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

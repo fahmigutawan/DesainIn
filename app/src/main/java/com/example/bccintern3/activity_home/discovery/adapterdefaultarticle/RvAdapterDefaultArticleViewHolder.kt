@@ -29,8 +29,6 @@ class RvAdapterDefaultArticleViewHolder(inflater: LayoutInflater
 {
     private var imageView: ImageView
     private var titleTv:TextView
-    private var penulisTv:TextView
-    private var tanggalTv:TextView
     private var clickArea:LinearLayout
     private var parentView = parentView
     private var mainFlManager = mainFlManager
@@ -44,15 +42,11 @@ class RvAdapterDefaultArticleViewHolder(inflater: LayoutInflater
         clickArea = itemView.findViewById(R.id.discoveryfragment_default_artikelborder_clickarea)
         imageView = itemView.findViewById(R.id.discoveryfragment_default_artikelborder_iv)
         titleTv = itemView.findViewById(R.id.discoveryfragment_default_artikelborder_titletv)
-        penulisTv = itemView.findViewById(R.id.discoveryfragment_default_artikelborder_penulistv)
-        tanggalTv = itemView.findViewById(R.id.discoveryfragment_default_artikelborder_tanggaltv)
         loadFrag = LoadFragment()
         runClickListener()
     }
     fun bind(url:String,
              judul:String,
-             penulis:String,
-             tanggal:String,
              hari:String,
              bulan:String,
              tahun:String,
@@ -76,12 +70,6 @@ class RvAdapterDefaultArticleViewHolder(inflater: LayoutInflater
 
         /**set judul**/
         titleTv.setText(judul)
-
-        /**set penulis**/
-        penulisTv.setText(penulis)
-
-        /**set tanggal**/
-        tanggalTv.setText(tanggal)
     }
     fun runClickListener(){
         clickArea.setOnClickListener {

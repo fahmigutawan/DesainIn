@@ -9,35 +9,46 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_medium"
-            android:gravity="start"
-            android:text="Kategori"
-            android:textColor="@color/black"
-            android:textSize="14dp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/discoveryfragment_default_kategori_rv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="16dp">
+            android:background="@color/color_palet_blue"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfpro_display_medium"
+                android:gravity="start"
+                android:text="Kategori"
+                android:textColor="@color/color_palet_white3"
+                android:textSize="14dp"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/discoveryfragment_default_kategori_rv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/sfpro_display_medium"
                     android:gravity="start"
                     android:text="Artikel tentang Desain"
                     android:textColor="@color/black"
@@ -60,10 +71,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:clickable="true"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/sfpro_display_medium"
                     android:gravity="end"
                     android:text="Lainnya"
-                    android:textColor="@color/blue_cyan"
+                    android:textColor="@color/color_palet_midgray"
                     android:textSize="14dp" />
             </LinearLayout>
 

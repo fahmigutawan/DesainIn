@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:padding="8dp">
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:padding="4dp">
 
     <LinearLayout
         android:id="@+id/homefragment_filled_search_border_clickarea"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/universal_ripple_rv_background"
+        android:background="@drawable/universal_ripple_list_background"
         android:clickable="true"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,8 +23,10 @@
 
         <ImageView
             android:id="@+id/homefragment_filled_search_border_imageiv"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center_vertical"
             android:background="@drawable/icon_noprofile" />
 
         <LinearLayout
@@ -32,37 +35,37 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingLeft="16dp">
+            >
 
             <TextView
                 android:id="@+id/homefragment_filled_search_border_namatv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
-                android:text=". . ."
-                android:maxLines="1"
-                android:textColor="@color/black"
-                android:textSize="16dp" />
-
-            <TextView
-                android:id="@+id/homefragment_filled_search_border_kategoritv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_reguler"
+                android:fontFamily="@font/sfpro_display_medium"
                 android:text=". . ."
                 android:maxLines="1"
                 android:textColor="@color/black"
                 android:textSize="14dp" />
 
             <TextView
+                android:id="@+id/homefragment_filled_search_border_kategoritv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfpro_display_reguler"
+                android:text=". . ."
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <TextView
                 android:id="@+id/homefragment_filled_search_border_hargatv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_reguler"
+                android:fontFamily="@font/sfpro_display_reguler"
                 android:text=". . ."
                 android:maxLines="1"
                 android:textColor="@color/blue_cyan"
-                android:textSize="12dp" />
+                android:textSize="10dp" />
         </LinearLayout>
     </LinearLayout>
 

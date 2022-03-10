@@ -1,7 +1,9 @@
 package com.example.bccintern3.activity_home.discovery
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.*
@@ -12,24 +14,27 @@ import androidx.fragment.app.FragmentManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bccintern2.picasso.CircleTransform
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_chat.ChatActivity
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.vp_adapterdetaildesainer.VpAdapterDetailDesainer
+import com.example.bccintern3.activity_login.LoginActivity
 import com.example.bccintern3.nonactivity_invisiblefunction.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.squareup.picasso.Picasso
 
-class DiscoveryFragmentDetailDesainer(private val flManager:FragmentManager,
-                                      private val thisContext: Context,
-                                      private val navbar: BottomNavigationView,
-                                      private val activity:AppCompatActivity,
-                                      private val uidSelected:String,
-                                      private val idKategoriSelected:String,
-                                      private val appContext: Context
+class DiscoveryFragmentDetailDesainer(flManager:FragmentManager,
+                                      thisContext: Context,
+                                      navbar: BottomNavigationView,
+                                      activity:AppCompatActivity,
+                                      uidSelected:String,
+                                      idKategoriSelected:String,
+                                      appContext: Context
 ):Fragment(R.layout.home_discoveryfragment_desainer_detail) {
-    private lateinit var archiveCb:CheckBox
     private lateinit var bannerVp:ViewPager2
     private lateinit var nameTv:TextView
     private lateinit var kategoriTv:TextView
@@ -44,9 +49,27 @@ class DiscoveryFragmentDetailDesainer(private val flManager:FragmentManager,
     private lateinit var loadAct:LoadActivity
     private lateinit var dbRef:DbReference
     private lateinit var vpAdapter:VpAdapterDetailDesainer
+    private lateinit var fbAuth:FirebaseAuth
+
+    private val flManager:FragmentManager
+    private val thisContext: Context
+    private val navbar: BottomNavigationView
+    private val activity:AppCompatActivity
+    private val uidSelected:String
+    private val idKategoriSelected:String
+    private val appContext: Context
+
+    init {
+        this.flManager = flManager
+        this.thisContext = thisContext
+        this.navbar = navbar
+        this.activity = activity
+        this.uidSelected = uidSelected
+        this.idKategoriSelected = idKategoriSelected
+        this.appContext = appContext
+    }
 
     fun init(view: View){
-        archiveCb = view.findViewById(R.id.discoveryfragment_desainerdetail_bookmark_cb)
         bannerVp = view.findViewById(R.id.discoveryfragment_desainerdetail_banner_vp)
         nameTv = view.findViewById(R.id.discoveryfragment_desainerdetail_nama_tv)
         kategoriTv = view.findViewById(R.id.discoveryfragment_desainerdetail_kategori_tv)
@@ -60,10 +83,12 @@ class DiscoveryFragmentDetailDesainer(private val flManager:FragmentManager,
         loadFrag = LoadFragment()
         loadAct = LoadActivity()
         dbRef = DbReference()
+        fbAuth = FirebaseAuth.getInstance()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        FirebaseMessaging.getInstance().subscribeToTopic("all");
         init(view)
         setVpBanner(view)
         setDataPreview()
@@ -148,10 +173,81 @@ class DiscoveryFragmentDetailDesainer(private val flManager:FragmentManager,
         })
     }
     fun runClickListener(){
-
-
         chatBtn.setOnClickListener {
+            if(fbAuth.currentUser?.uid!=null){
+                val ref = dbRef.refChatRoomNode()
 
+                val tmp1 = fbAuth.currentUser?.uid.toString() + uidSelected
+                val tmp2 = uidSelected + fbAuth.currentUser?.uid.toString()
+
+                val refUser1 = dbRef.refUidNode(fbAuth.currentUser?.uid.toString()).child("roomChatId")
+                val refUser2 = dbRef.refUidNode(uidSelected).child("roomChatId")
+
+                if(fbAuth.currentUser?.uid.toString() == uidSelected){
+                    Toast.makeText(thisContext,"Tidak bisa chat dengan diri sendiri",Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    refUser1.addValueEventListener(object : ValueEventListener {
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            refUser1.removeEventListener(this)
+                            if(!snapshot.hasChild(tmp1) && !snapshot.hasChild(tmp2)){
+                                /**hanya dicek pada user1. Karena jika user1 tidak punya, pasti user2 tidak punya**/
+                                refUser1.child(tmp1).child("roomId").setValue(tmp1)
+                                refUser1.child(tmp1).child("user1").setValue(uidSelected)
+                                refUser1.child(tmp1).child("user2").setValue(fbAuth.currentUser?.uid.toString())
+                                refUser1.child(tmp1).child("count").setValue("0")
+
+                                refUser2.child(tmp1).child("roomId").setValue(tmp1)
+                                refUser2.child(tmp1).child("user1").setValue(uidSelected)
+                                refUser2.child(tmp1).child("user2").setValue(fbAuth.currentUser?.uid.toString())
+                                refUser2.child(tmp1).child("count").setValue("0")
+
+                                ref.child(tmp1).child("identity").child("count").setValue("0")
+                                ref.child(tmp1).child("identity").child("chatId").setValue(tmp1)
+                                ref.child(tmp1).child("identity").child("user1").setValue(fbAuth.currentUser?.uid.toString())
+                                ref.child(tmp1).child("identity").child("user2").setValue(uidSelected)
+
+
+                                loadAct.loadActivityCompleteWithExtras(
+                                    thisContext,
+                                    ChatActivity::class.java,
+                                    activity,
+                                    true,
+                                    1000,
+                                    "uid",
+                                    tmp1)
+                            }
+                            else if(snapshot.hasChild(tmp1)){
+                                loadAct.loadActivityCompleteWithExtras(
+                                    thisContext,
+                                    ChatActivity::class.java,
+                                    activity,
+                                    true,
+                                    1000,
+                                    "uid",
+                                    tmp1)
+                            }
+                            else if(snapshot.hasChild(tmp2)){
+                                loadAct.loadActivityCompleteWithExtras(
+                                    thisContext,
+                                    ChatActivity::class.java,
+                                    activity,
+                                    true,
+                                    1000,
+                                    "uid",
+                                    tmp2)
+                            }
+                        }
+                        override fun onCancelled(error: DatabaseError) {
+                            TODO("Not yet implemented")
+                        }
+                    })
+                }
+            }
+            else{
+                Toast.makeText(thisContext,"Harap login untuk mengirim pesan",Toast.LENGTH_SHORT).show()
+                loadAct.loadActivityDelayable(thisContext,LoginActivity::class.java,1000)
+            }
         }
     }
 }

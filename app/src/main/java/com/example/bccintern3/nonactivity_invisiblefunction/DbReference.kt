@@ -24,4 +24,7 @@ class DbReference {
     fun refDesignerNode():DatabaseReference{
         return database.getReference("designer")
     }
+    fun refChatRoomNode():DatabaseReference{
+        return database.getReference("chat room")
+    }
 }

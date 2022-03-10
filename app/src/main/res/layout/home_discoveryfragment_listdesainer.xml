@@ -16,17 +16,18 @@
             android:layout_height="wrap_content"
             android:text="Jelajahi desainer"
             android:textAllCaps="false"
-            android:layout_marginTop="16dp"
-            android:textSize="18dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp"
+            android:background="@color/color_palet_blue"
+            android:textSize="20dp"
             android:gravity="center"
-            android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/black"/>
+            android:fontFamily="@font/sfpro_display_black_bold"
+            android:textColor="@color/color_palet_white3"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/discoveryfragment_listdesainer_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
             android:padding="16dp" />
     </LinearLayout>
 

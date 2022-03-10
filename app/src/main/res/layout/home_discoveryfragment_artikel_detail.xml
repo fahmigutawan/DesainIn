@@ -32,7 +32,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/universal_white_button"
+                android:background="@drawable/home_discoveryfragment_artikeldetail_artikelbackground"
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -40,7 +40,7 @@
                     android:id="@+id/discoveryfragment_artikeldetail_judultv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semibold"
+                    android:fontFamily="@font/sfpro_display_medium"
                     android:text=". . ."
                     android:textColor="@color/black"
                     android:textSize="16dp" />
@@ -55,7 +55,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
-                        android:fontFamily="@font/poppins_reguler"
+                        android:fontFamily="@font/sfpro_display_reguler"
                         android:textColor="@color/blue_cyan"
                         android:textSize="12dp" />
 
@@ -63,7 +63,7 @@
                         android:id="@+id/discoveryfragment_artikeldetail_tanggaltv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_reguler"
+                        android:fontFamily="@font/sfpro_display_reguler"
                         android:textColor="@color/black"
                         android:textSize="10dp" />
                 </LinearLayout>
@@ -72,7 +72,7 @@
                     android:id="@+id/discoveryfragment_artikeldetail_isitv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_reguler"
+                    android:fontFamily="@font/sfpro_display_reguler"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
 

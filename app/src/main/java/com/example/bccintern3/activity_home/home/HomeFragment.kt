@@ -43,6 +43,7 @@ class HomeFragment(private var flManager: FragmentManager,
     }
 
     fun runSearchListener(){
+        searchEt.setText("")
         val ref1 = dbRef.refDesignerNode()
         val uid = ArrayList<String>()
         val nama = ArrayList<String>()

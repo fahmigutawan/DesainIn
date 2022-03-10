@@ -46,7 +46,7 @@ class RvAdapterDefaultKategoriViewHolder(inflater:LayoutInflater,
     }
     fun bind(index:Int){
         val w = parentView.width
-        val size = (w/4.2).toInt()
+        val size = (w/5).toInt()
         val ref = dbRef.refCategoryPicture()
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

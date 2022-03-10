@@ -18,6 +18,9 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable-v24/icon_logout.xml" value="0.1075" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable-v24/icon_next.xml" value="0.2535" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable-v24/login_activity_google_button.xml" value="0.1845" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/chat_activity_bubble_kita.xml" value="0.211" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/chat_activity_bubble_lawan.xml" value="0.211" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/chat_activity_topbar.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/chatroom_activity_send_icon.xml" value="0.2" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/chatroom_activity_sendicon.xml" value="0.225" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/home_activity_navbar_background.xml" value="0.136" />
@@ -56,6 +59,7 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_navbar_home.xml" value="0.2535" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_navbar_user.xml" value="0.2535" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_noprofile.xml" value="0.202" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_notification.xml" value="0.136" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_search.xml" value="0.204" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_send.xml" value="0.225" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_user.xml" value="0.2145" />
@@ -64,13 +68,18 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_darkblue_button.xml" value="0.271" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_gray_background.xml" value="0.202" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_red_button.xml" value="0.1" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_ripple_list_background.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_ripple_rv_background.xml" value="0.2395" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_white_button.xml" value="0.271" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_white_textinput.xml" value="0.1845" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_white_textview.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_yellow_button.xml" value="0.2385" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_yellow_lighter_button.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/activity_main.xml" value="0.1956521739130435" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_activity.xml" value="0.2" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/editprofile_activity.xml" value="0.16757246376811594" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_activity_lawan_border.xml" value="0.2" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_activity_user_border.xml" value="0.2" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/editprofile_activity.xml" value="0.25" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/firsttime_activity.xml" value="0.16077898550724637" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/firsttime_login.xml" value="0.16077898550724637" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_activity.xml" value="0.25" />
@@ -90,27 +99,29 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_kategori_detail.xml" value="0.2" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_kategori_detail_border.xml" value="0.12552083333333333" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listartikel.xml" value="0.12552083333333333" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listartikel_borderitem.xml" value="0.23867753623188406" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listartikel_borderitem.xml" value="0.33" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listdesainer.xml" value="0.2" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listdesainer_borderitem.xml" value="0.2" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listkategori.xml" value="0.12552083333333333" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listkategori_borderitem.xml" value="0.33" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_filled_searched_border.xml" value="0.182518115942029" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_listkategori_borderitem.xml" value="0.24066390041493776" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_filled_searched_border.xml" value="0.33" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_home_fragment.xml" value="0.17980072463768115" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment.xml" value="0.22" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_filled.xml" value="0.23505434782608695" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfill_artikel_border.xml" value="0.33" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfill_desainer_border.xml" value="0.5" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfill_kategori_border.xml" value="0.12552083333333333" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfill_kategori_border.xml" value="0.5" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfilled.xml" value="0.22" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_profilefragment.xml" value="0.22" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/login_activity.xml" value="0.2" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/hubungi_activity.xml" value="0.19655797101449277" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/login_activity.xml" value="0.33" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/onboard_activity.xml" value="0.25" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/payment_activity.xml" value="0.25" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointone_fragment.xml" value="0.33" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/paymentkonfirmasi_activity.xml" value="0.2" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointone_fragment.xml" value="0.2" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointthree_fragment.xml" value="0.12552083333333333" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointtwo_fragment.xml" value="0.12552083333333333" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/signup_activity.xml" value="0.16" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointtwo_fragment.xml" value="0.67" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/signup_activity.xml" value="0.33" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/signup_activity_spinner_style.xml" value="0.13645833333333332" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/splash_screen.xml" value="0.1956521739130435" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/splashscreen_activity.xml" value="0.1956521739130435" />

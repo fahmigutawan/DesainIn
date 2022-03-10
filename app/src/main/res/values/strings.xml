@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Desain.In</string>
+    <string name="home_fragment">homefrag</string>
+    <string name="discovery_fragment">discoveryfrag</string>
+    <string name="chat_fragment">chatfrag</string>
+    <string name="user_fragment">userfrag</string>
+    <string name="last_frag">lastfrag</string>
+    <string name="last_navbar_id">lastfrag</string>
 </resources>

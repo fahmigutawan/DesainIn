@@ -13,6 +13,7 @@ import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.example.bccintern3.activity_login.LoginActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.messaging.FirebaseMessaging
 import com.squareup.picasso.Picasso
 
 class SignUpActivity:AppCompatActivity(R.layout.signup_activity) {
@@ -89,6 +90,7 @@ class SignUpActivity:AppCompatActivity(R.layout.signup_activity) {
             if(getPassword()==getPasswordConfirm()){
                 fbAuth.createUserWithEmailAndPassword(email.text.toString(),password.text.toString())
                     .addOnSuccessListener {
+                        sendToken()
                         Toast.makeText(applicationContext,"Registrasi berhasil.\n\nAnda akan otomatis menuju halaman login",Toast.LENGTH_LONG).show()
 
                         storeData() //memasukkan data profil pengguna
@@ -166,5 +168,14 @@ class SignUpActivity:AppCompatActivity(R.layout.signup_activity) {
     }
     private fun getPasswordConfirm():String{
         return passwordConfirm.text.toString().trim()
+    }
+    fun sendToken(){
+        if(fbAuth.currentUser!=null){
+            val ref = dbReference.refUidNode(fbAuth.currentUser?.uid.toString()).child("profile")
+
+            FirebaseMessaging.getInstance().token.addOnCompleteListener {
+                ref.child("fcmToken").setValue(it.result.toString())
+            }
+        }
     }
 }

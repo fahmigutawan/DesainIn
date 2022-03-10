@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.messaging.FirebaseMessaging
 import com.squareup.picasso.Picasso
 
 class SplashScreen: AppCompatActivity() {
@@ -35,6 +36,7 @@ class SplashScreen: AppCompatActivity() {
         init()
         setLogo()
         cekLogin()
+        sendToken()
     }
     fun setLogo(){
         Picasso
@@ -64,6 +66,15 @@ class SplashScreen: AppCompatActivity() {
                     TODO("Not yet implemented")
                 }
             })
+        }
+    }
+    fun sendToken(){
+        if(fbAuth.currentUser!=null){
+            val ref = dbRef.refUidNode(fbAuth.currentUser?.uid.toString()).child("profile")
+
+            FirebaseMessaging.getInstance().token.addOnCompleteListener {
+                ref.child("fcmToken").setValue(it.result.toString())
+            }
         }
     }
 }

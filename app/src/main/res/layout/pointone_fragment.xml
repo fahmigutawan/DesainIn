@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/color_palet_blue">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,8 @@
 
         <ImageView
             android:id="@+id/onboardingone_image"
-            android:layout_gravity="center"
+            android:layout_gravity="start"
+            android:layout_marginLeft="-64dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -26,8 +27,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -35,11 +35,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/sfpro_display_black_bold"
                 android:text="Discover"
                 android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="36dp" />
+                android:textColor="@color/color_palet_white3"
+                android:textSize="34dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -47,10 +47,10 @@
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:layout_marginBottom="32dp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/sfpro_display_reguler"
                 android:text="Pantau informasi terbaru dan menarik dari desainer hanya dalam genggaman Anda."
                 android:textAlignment="textStart"
-                android:textColor="@color/black"
+                android:textColor="@color/color_palet_white3"
                 android:textSize="14dp" />
         </LinearLayout>
 

@@ -4,61 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:layout_margin="8dp">
+    >
 
     <LinearLayout
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:id="@+id/discoveryfragment_listdesainer_border_clickarea"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
         android:background="@drawable/universal_ripple_rv_background"
-        android:clickable="true">
+        android:clickable="true"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/discoveryfragment_listdesainer_border_imageiv"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
-            android:background="@drawable/icon_noprofile"/>
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/icon_noprofile" />
 
         <LinearLayout
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            >
+            android:orientation="vertical"
+            android:paddingLeft="16dp">
 
             <TextView
                 android:id="@+id/discoveryfragment_listdesainer_border_namatv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=". . ."
-                android:maxLines="1"
-                android:textSize="16dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:textColor="@color/black"/>
+                android:maxLines="1"
+                android:text=". . ."
+                android:textColor="@color/black"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/discoveryfragment_listdesainer_border_kategoritv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=". . ."
-                android:maxLines="1"
-                android:textSize="14dp"
                 android:fontFamily="@font/poppins_reguler"
-                android:textColor="@color/black"/>
+                android:maxLines="1"
+                android:text=". . ."
+                android:textColor="@color/black"
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/discoveryfragment_listdesainer_border_hargatv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=". . ."
-                android:maxLines="1"
-                android:textSize="12dp"
                 android:fontFamily="@font/poppins_reguler"
-                android:textColor="@color/blue_cyan"/>
+                android:maxLines="1"
+                android:text=". . ."
+                android:textColor="@color/blue_cyan"
+                android:textSize="12dp" />
         </LinearLayout>
     </LinearLayout>
 

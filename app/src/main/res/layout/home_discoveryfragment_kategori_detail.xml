@@ -1,74 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:background="@color/color_palet_blue"
             android:id="@+id/discoveryfragment_kategoridetail_namakategori_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nama Kategori"
-            android:textSize="18dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/black"
+            android:fontFamily="@font/sfpro_display_black_bold"
             android:gravity="center"
-            android:padding="16dp"/>
+            android:padding="32dp"
+            android:text="Nama Kategori"
+            android:textColor="@color/color_palet_white3"
+            android:textSize="20dp" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                >
+                android:orientation="vertical">
+
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/discoveryfragment_kategoridetail_banner_vp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    >
-                </androidx.viewpager2.widget.ViewPager2>
+                    ></androidx.viewpager2.widget.ViewPager2>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:paddingBottom="32dp"
-                    >
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
 
                     <TextView
+                        android:background="@drawable/universal_white_textview"
                         android:id="@+id/discoveryfragment_kategoridetail_deskripsi_tv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:layout_marginTop="32dp"
-                        android:textSize="14dp"
+                        android:padding="16dp"
+                        android:layout_weight="1"
                         android:fontFamily="@font/poppins_reguler"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
 
                     <Button
-                        android:layout_marginTop="32dp"
-                        android:layout_marginLeft="32dp"
-                        android:layout_marginRight="32dp"
                         android:id="@+id/discoveryfragment_kategoridetail_tampilkan_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginRight="32dp"
                         android:layout_weight="1"
-                        android:text="Tampilkan desainer"
-                        android:fontFamily="@font/inter_bold"
-                        android:textSize="16dp"
-                        android:textAllCaps="false"
                         android:background="@drawable/universal_yellow_button"
-                        android:textColor="@color/black"/>
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Tampilkan desainer"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
                 </LinearLayout>
 
             </LinearLayout>

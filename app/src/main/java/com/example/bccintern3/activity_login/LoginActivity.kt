@@ -27,6 +27,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.messaging.FirebaseMessaging
 import com.squareup.picasso.Picasso
 
 class LoginActivity:AppCompatActivity() {
@@ -171,6 +172,7 @@ class LoginActivity:AppCompatActivity() {
         fbAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    sendToken()
                     Toast.makeText(applicationContext,"Login berhasil.\n\nOtomatis akan ke halaman beranda",Toast.LENGTH_LONG).show()
                     Handler().postDelayed({
                         storeData()
@@ -190,6 +192,16 @@ class LoginActivity:AppCompatActivity() {
             Toast.makeText(applicationContext,"Login gagal, cek kembali data yang anda masukkan",Toast.LENGTH_SHORT).show()
         }.addOnSuccessListener {
             checkFirstTimeLogin()
+            sendToken()
+        }
+    }
+    fun sendToken(){
+        if(fbAuth.currentUser!=null){
+            val ref = dbReference.refUidNode(fbAuth.currentUser?.uid.toString()).child("profile")
+
+            FirebaseMessaging.getInstance().token.addOnCompleteListener {
+                ref.child("fcmToken").setValue(it.result.toString())
+            }
         }
     }
 

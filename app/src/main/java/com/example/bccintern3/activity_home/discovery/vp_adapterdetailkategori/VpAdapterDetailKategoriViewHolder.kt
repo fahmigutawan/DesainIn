@@ -33,7 +33,6 @@ class VpAdapterDetailKategoriViewHolder(inflater: LayoutInflater,
         Picasso
             .get()
             .load(url)
-            .transform(RoundCornerRect(30f,0f,0f,0f,0f))
             .resize(width,height)
             .centerCrop()
             .into(imageView)
