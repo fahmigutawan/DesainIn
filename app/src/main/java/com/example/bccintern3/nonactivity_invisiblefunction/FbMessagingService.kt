@@ -21,6 +21,7 @@ import com.google.firebase.messaging.RemoteMessage
 
 class FbMessagingService:FirebaseMessagingService() {
     lateinit var mNotificationManager:NotificationManager
+    var fbAuth = FirebaseAuth.getInstance()
 
     override fun onMessageReceived(p0: RemoteMessage) {
         super.onMessageReceived(p0)
@@ -75,12 +76,12 @@ class FbMessagingService:FirebaseMessagingService() {
         val auth = FirebaseAuth.getInstance()
         val ref = DbReference().refUidNode(auth.currentUser?.uid.toString())
 
-        ref
-            .child("profile")
-            .child("fcmToken")
-            .setValue(p0)
-
-        Log.e("TOKE BARU",p0)
+        if(fbAuth.currentUser!=null){
+            ref
+                .child("profile")
+                .child("fcmToken")
+                .setValue(p0)
+        }
     }
 
 }
