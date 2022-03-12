@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:layoutAnimation="@anim/slidein_right_to_left">
+    android:background="@color/color_palet_blue"
+    android:layoutAnimation="@anim/slidein_right_to_left"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,14 +32,15 @@
                 android:layout_height="wrap_content"
                 android:text="Lewati"
                 android:clickable="true"
-                android:textColor="@color/black"
+                android:textColor="@color/color_palet_white3"
                 android:textSize="12dp"
-                android:fontFamily="@font/sfpro_display_reguler"
+                android:fontFamily="@font/sfpro_display_medium"
                 />
 
         </LinearLayout>
 
         <androidx.fragment.app.FragmentContainerView
+            android:paddingTop="84dp"
             android:id="@+id/firsttimelogin_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -48,9 +50,9 @@
             android:id="@+id/firsttimelogin_next_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
+            android:layout_marginLeft="64dp"
             android:layout_marginTop="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginRight="64dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/universal_yellow_button"
             android:fontFamily="@font/sfpro_display_reguler"

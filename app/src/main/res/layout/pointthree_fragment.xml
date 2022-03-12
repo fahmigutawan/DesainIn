@@ -18,10 +18,10 @@
 
         <ImageView
             android:id="@+id/onboardingthree_image"
-            android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_gravity="start"
+            android:layout_marginLeft="-64dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:textSize="34dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             />
 
         <TextView
@@ -44,10 +44,16 @@
             android:textColor="@color/color_palet_white3"
             android:fontFamily="@font/sfpro_display_reguler"
             android:textSize="12dp"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="32dp"/>
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/bar3" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

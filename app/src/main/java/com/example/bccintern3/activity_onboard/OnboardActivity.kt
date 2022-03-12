@@ -68,7 +68,7 @@ class OnboardActivity:AppCompatActivity() {
             when(getFragmentNumber()){
                 2 -> {
                     manager.beginTransaction()
-                        .setCustomAnimations(R.anim.set_slidein_left_to_right,R.anim.set_slideout_left_to_right,R.anim.set_slidein_right_to_left,R.anim.set_slideout_right_to_left)
+                        .setCustomAnimations(R.anim.set_slidein_right_to_left,R.anim.set_slideout_right_to_left,R.anim.set_slidein_left_to_right,R.anim.set_slideout_left_to_right)
                         .replace(R.id.firsttimelogin_fragment,point2)
                         .addToBackStack(null)
                         .commit()
@@ -107,7 +107,7 @@ class OnboardActivity:AppCompatActivity() {
             2 ->{
                 setFragmentNumber(-1)
                 manager.beginTransaction()
-                    .setCustomAnimations(R.anim.set_slidein_right_to_left,R.anim.set_slideout_right_to_left,R.anim.set_slidein_left_to_right,R.anim.set_slideout_left_to_right)
+                    .setCustomAnimations(R.anim.set_slidein_left_to_right,R.anim.set_slideout_left_to_right,R.anim.set_slidein_right_to_left,R.anim.set_slideout_right_to_left)
                     .replace(R.id.firsttimelogin_fragment,point1)
                     .addToBackStack(null)
                     .commit()
@@ -135,10 +135,5 @@ class OnboardActivity:AppCompatActivity() {
     }
     fun getFragmentNumber():Int{
         return fragmentNumber
-    }
-    private fun signOut() {
-        fbAuth.signOut()
-        mGoogleSignInClient.signOut()
-        mGoogleSignInClient.revokeAccess()
     }
 }

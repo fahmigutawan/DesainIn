@@ -80,22 +80,49 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/universal_white_textinput"
+                            android:fontFamily="@font/sfpro_display_reguler"
+                            android:inputType="number"
                             android:paddingLeft="16dp"
                             android:paddingTop="8dp"
                             android:paddingRight="16dp"
                             android:paddingBottom="8dp"
-                            android:textSize="14dp"
                             android:textColor="@color/black"
-                            android:fontFamily="@font/sfpro_display_reguler"/>
+                            android:textSize="14dp" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="500dp"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/universal_gray_background"
-                    android:orientation="vertical"></LinearLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/universal_white_textview">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfpro_display_medium"
+                        android:padding="16dp"
+                        android:text="Metode Pembayaran"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:background="@drawable/universal_white_textinput">
+
+                        <Spinner
+                            android:id="@+id/paymentactivity_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </FrameLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
@@ -134,10 +161,10 @@
                 android:layout_weight="1"
                 android:text="Konfirmasi"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="12dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:background="@drawable/universal_yellow_lighter_button"
+                android:background="@drawable/universal_blue_button"
                 android:layout_marginLeft="16dp"/>
         </LinearLayout>
     </LinearLayout>

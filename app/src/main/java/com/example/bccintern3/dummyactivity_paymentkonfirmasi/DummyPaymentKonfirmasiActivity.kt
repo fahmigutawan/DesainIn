@@ -1,8 +1,10 @@
 package com.example.bccintern3.dummyactivity_paymentkonfirmasi
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bccintern3.R
@@ -24,19 +26,39 @@ class DummyPaymentKonfirmasiActivity:AppCompatActivity(R.layout.paymentkonfirmas
     private lateinit var fbAuth: FirebaseAuth
     private lateinit var uidSelected:String
 
+    private lateinit var harga:String
+    private lateinit var metode:String
+
+    private lateinit var namaTv:TextView
+    private lateinit var hargaTv:TextView
+    private lateinit var metodeTv:TextView
+    private lateinit var uploadBuktiBtn:Button
+    private lateinit var uploadedTv:TextView
+
     fun init(){
         chatBtn = findViewById(R.id.paymentkonfirmasiactivity_chatbtn)
         loadFrag = LoadFragment()
         loadAct = LoadActivity()
         dbRef = DbReference()
         fbAuth = FirebaseAuth.getInstance()
+        namaTv = findViewById(R.id.paymentkonfirmasiactivity_desainertv)
+        hargaTv = findViewById(R.id.paymentkonfirmasiactivity_hargatv)
+        metodeTv = findViewById(R.id.paymentkonfirmasiactivity_metodetv)
+        uploadBuktiBtn = findViewById(R.id.paymentkonfirmasiactivity_unggahBtn)
+        uploadedTv = findViewById(R.id.paymentkonfirmasiactivity_uploadedtv)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
         loadUidSelectedFromExras()
+        loadNominalFromExtras()
+        loadMetodeFromExtras()
+        loadDisplayText()
         runClickListener()
+
+        chatBtn.setBackgroundResource(R.drawable.universal_gray_button)
+        chatBtn.setClickable(false)
     }
     fun displayBackConfirmation(){
         val dialog = Dialog(this)
@@ -53,6 +75,23 @@ class DummyPaymentKonfirmasiActivity:AppCompatActivity(R.layout.paymentkonfirmas
             super.onBackPressed()
         }
         dialog.show()
+    }
+    fun loadDisplayText(){
+        val ref = dbRef.refUidNode(uidSelected).child("profile")
+
+        ref.addValueEventListener(object :
+            ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                ref.removeEventListener(this)
+
+                namaTv.setText(snapshot.child("name").getValue().toString())
+                hargaTv.setText(harga)
+                metodeTv.setText(metode)
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+
+        })
     }
     override fun onBackPressed() {
         displayBackConfirmation()
@@ -134,9 +173,33 @@ class DummyPaymentKonfirmasiActivity:AppCompatActivity(R.layout.paymentkonfirmas
                 loadAct.loadActivityDelayable(this, LoginActivity::class.java,1000)
             }
         }
+        uploadBuktiBtn.setOnClickListener {
+            selectImage()
+        }
     }
     fun loadUidSelectedFromExras(){
         uidSelected = intent.extras?.getString("uid").toString()
     }
+    fun loadNominalFromExtras(){
+        harga = intent.extras?.getString("nominal").toString()
+    }
+    fun loadMetodeFromExtras(){
+        metode = intent.extras?.getString("metode").toString()
+    }
+    private fun selectImage(){
+        val intent = Intent()
+        intent.setType("image/*")
+        intent.setAction(Intent.ACTION_GET_CONTENT)
 
+        startActivityForResult(intent,100)
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == 100 && data!=null &&data.getData()!=null && resultCode == RESULT_OK){
+            uploadedTv.setText("Gambar terpilih")
+            chatBtn.setBackgroundResource(R.drawable.universal_blue_button)
+            chatBtn.setClickable(true)
+        }
+    }
 }

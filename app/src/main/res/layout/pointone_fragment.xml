@@ -21,8 +21,7 @@
             android:layout_gravity="start"
             android:layout_marginLeft="-64dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
@@ -53,6 +52,12 @@
                 android:textColor="@color/color_palet_white3"
                 android:textSize="12dp" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/bar1" />
 
     </LinearLayout>
 

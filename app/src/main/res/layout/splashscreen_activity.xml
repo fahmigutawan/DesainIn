@@ -16,8 +16,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/splashscreen_activity_background">
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/splashscreen_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/background_splashscreen" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,11 +41,11 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:background="@drawable/splashscreen_activity_bg_logo"
-                android:padding="2dp"
                 android:id="@+id/splashscreen_imageview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/splashscreen_activity_bg_logo"
+                android:padding="2dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView

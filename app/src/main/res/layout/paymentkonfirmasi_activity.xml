@@ -23,26 +23,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                >
 
                 <TextView
+                    android:background="@color/color_palet_blue"
+                    android:padding="32dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Riwayat Order"
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/color_palet_white3"
                     android:fontFamily="@font/sfpro_display_black_bold"/>
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/universal_blue_background"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp">
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingBottom="16dp"
+                    android:paddingTop="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -56,40 +58,279 @@
 
 
                 <LinearLayout
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:padding="16dp"
+                    android:background="@color/color_palet_yellow_lighter"
                     android:layout_width="match_parent"
-                    android:layout_height="600dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/universal_gray_background"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:background="@drawable/universal_white_noborder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Batas Pembayaran"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/sfpro_display_medium"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="16dp"
+                                android:background="@color/light_gray">
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="16dp"
+                                android:background="@color/light_gray">
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="16dp"
+                                android:background="@color/light_gray">
+
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mohon segera lakukan pembayaran. Pesanan akan dibatalkan jika melewati batas waktu yang sudah ditentukan."
+                            android:paddingLeft="16dp"
+                            android:paddingBottom="16dp"
+                            android:textSize="12dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/sfpro_display_reguler"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/universal_white_noborder"
+                        android:padding="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nomor Virtual Account"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/sfpro_display_medium"/>
+
+                        <TextView
+                            android:layout_marginTop="8dp"
+                            android:id="@+id/textView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="081 553 993 193"
+                            android:textColor="@color/black"
+                            android:textSize="12dp"
+                            android:fontFamily="@font/sfpro_display_reguler"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/universal_white_noborder"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sfpro_display_medium"
+                            android:text="Detail Pesanan"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView17"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text="Nama Desainer"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                            <TextView
+                                android:id="@+id/paymentkonfirmasiactivity_desainertv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text=". . ."
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView19"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text="Harga Jasa"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                            <TextView
+                                android:id="@+id/paymentkonfirmasiactivity_hargatv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text=". . ."
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text="Metode Pembayaran"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                            <TextView
+                                android:id="@+id/paymentkonfirmasiactivity_metodetv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:text=". . ."
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:background="@drawable/universal_white_noborder"
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/sfpro_display_medium"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Upload Bukti Pembayaran"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:padding="16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:background="@drawable/universal_black_button"
+                                android:layout_marginRight="16dp"
+                                android:id="@+id/paymentkonfirmasiactivity_unggahBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Unggah Bukti"
+                                android:drawableEnd="@drawable/icon_upload"
+                                android:paddingRight="16dp"
+                                android:paddingLeft="16dp"
+                                android:textColor="@color/white"
+                                android:textSize="12dp"
+                                android:textAllCaps="false"
+                                android:fontFamily="@font/sfpro_display_medium"/>
+
+                            <TextView
+                                android:id="@+id/paymentkonfirmasiactivity_uploadedtv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textSize="12dp"
+                                android:fontFamily="@font/sfpro_display_medium"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Button
+
+                        android:id="@+id/paymentkonfirmasiactivity_chatbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/universal_blue_button"
+                        android:elevation="2dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:text="Chat Desainer"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_palet_white2"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center">
-
-            <Button
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:elevation="2dp"
-                android:id="@+id/paymentkonfirmasiactivity_chatbtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Chat Desainer"
-                android:textAllCaps="false"
-                android:textColor="@color/color_palet_white2"
-                android:textSize="12dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:background="@drawable/universal_blue_button"
-                />
-        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

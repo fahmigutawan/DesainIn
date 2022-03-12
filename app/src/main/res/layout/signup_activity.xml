@@ -240,7 +240,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="42dp"
                     android:background="@drawable/universal_yellow_lighter_button"
-                    android:fontFamily="@font/inter_bold"
+                    android:fontFamily="@font/sfpro_display_medium"
                     android:text="Sign Up"
                     android:textAllCaps="false"
                     android:textColor="@color/black"

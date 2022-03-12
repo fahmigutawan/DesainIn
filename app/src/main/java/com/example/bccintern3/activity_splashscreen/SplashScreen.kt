@@ -1,6 +1,7 @@
 package com.example.bccintern3.activity_splashscreen
 
 import android.os.Bundle
+import android.view.ViewTreeObserver
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -23,6 +24,7 @@ class SplashScreen: AppCompatActivity() {
     private lateinit var dbRef:DbReference
     private lateinit var imageView:ImageView
     private lateinit var splashScreenConstraint:ConstraintLayout
+    private lateinit var bg:ImageView
 
 
     fun init() {
@@ -31,6 +33,7 @@ class SplashScreen: AppCompatActivity() {
         fbAuth = FirebaseAuth.getInstance()
         dbRef = DbReference()
         imageView = findViewById(R.id.splashscreen_imageview)
+        bg = findViewById(R.id.splashscreen_bg)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +43,21 @@ class SplashScreen: AppCompatActivity() {
         setLogo()
         cekLogin()
         sendToken()
+        setBackground()
+    }
+    fun setBackground(){
+        bg.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                bg.viewTreeObserver.removeOnGlobalLayoutListener(this)
+
+                Picasso
+                    .get()
+                    .load(R.drawable.background_splashscreen)
+                    .resize(bg.width,bg.height)
+                    .centerCrop()
+                    .into(bg)
+            }
+        })
     }
     fun setLogo(){
         Picasso

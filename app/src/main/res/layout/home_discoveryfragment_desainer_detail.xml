@@ -109,6 +109,7 @@
                             android:textSize="14dp" />
 
                         <TextView
+                            android:justificationMode="inter_word"
                             android:id="@+id/discoveryfragment_desainerdetail_deskripsi_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -206,11 +207,11 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/universal_yellow_button"
+                android:background="@drawable/universal_blue_button"
                 android:fontFamily="@font/inter_bold"
                 android:text="Order"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/color_palet_white3"
                 android:textSize="12dp" />
         </LinearLayout>
     </LinearLayout>

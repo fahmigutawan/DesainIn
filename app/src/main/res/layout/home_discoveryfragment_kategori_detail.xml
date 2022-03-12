@@ -14,18 +14,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:background="@color/color_palet_blue"
-            android:id="@+id/discoveryfragment_kategoridetail_namakategori_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/sfpro_display_black_bold"
-            android:gravity="center"
-            android:padding="32dp"
-            android:text=". . ."
-            android:textColor="@color/color_palet_white3"
-            android:textSize="20dp" />
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -34,6 +22,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/discoveryfragment_kategoridetail_namakategori_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_palet_blue"
+                    android:fontFamily="@font/sfpro_display_black_bold"
+                    android:gravity="center"
+                    android:padding="32dp"
+                    android:text=". . ."
+                    android:textColor="@color/color_palet_white3"
+                    android:textSize="20dp" />
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/discoveryfragment_kategoridetail_banner_vp"
@@ -50,13 +50,13 @@
                     android:paddingRight="16dp">
 
                     <TextView
+                        android:justificationMode="inter_word"
                         android:background="@drawable/universal_white_textview"
                         android:id="@+id/discoveryfragment_kategoridetail_deskripsi_tv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="32dp"
                         android:padding="16dp"
-                        android:layout_weight="1"
                         android:fontFamily="@font/poppins_reguler"
                         android:textColor="@color/black"
                         android:textSize="12dp" />
@@ -72,11 +72,11 @@
                         android:layout_marginTop="32dp"
                         android:layout_marginRight="32dp"
                         android:layout_weight="1"
-                        android:background="@drawable/universal_yellow_lighter_button"
+                        android:background="@drawable/universal_blue_button"
                         android:fontFamily="@font/inter_bold"
                         android:text="Tampilkan desainer"
                         android:textAllCaps="false"
-                        android:textColor="@color/black"
+                        android:textColor="@color/color_palet_white3"
                         android:textSize="12dp" />
                 </LinearLayout>
 

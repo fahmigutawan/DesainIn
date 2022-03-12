@@ -24,7 +24,7 @@ class PointTwo:Fragment(R.layout.pointtwo_fragment) {
     fun setImage(view: View){
         view.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
-                val size = (view.width/1.5).toInt()
+                val size = (view.width).toInt()
                 Picasso
                     .get()
                     .load(R.drawable.splash2)
