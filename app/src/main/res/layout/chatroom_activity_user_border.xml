@@ -48,7 +48,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="top|end"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:background="@drawable/icon_noprofile"/>
         </LinearLayout>
     </FrameLayout>
 

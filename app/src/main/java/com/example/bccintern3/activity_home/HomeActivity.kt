@@ -83,17 +83,16 @@ class HomeActivity:
                                               },500)
                     }
                     R.id.navChat->{
-                        if(lastTime+5000 > System.currentTimeMillis()){
+                        if(lastTime+1000 > System.currentTimeMillis()){
 
                         }else{
                             Handler().postDelayed({
                                 if(fbAuth.currentUser==null){
-                                    botNavbar.isClickable = false
                                     loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,false)
                                     Handler().postDelayed({
                                         botNavbar.menu.getItem(3).setChecked(false)
                                         botNavbar.menu.getItem(thisHome.getLastId()).setChecked(true)
-                                    },1000)
+                                    },500)
                                 }
                                 else{
                                     loadFrag.transfer(parentFlManager,fragLayout,chatFragment)
@@ -104,17 +103,16 @@ class HomeActivity:
                         lastTime = System.currentTimeMillis()
                     }
                     R.id.navProfile->{
-                        if(lastTime+5000 > System.currentTimeMillis()){
+                        if(lastTime+1000 > System.currentTimeMillis()){
 
                         }else{
                             Handler().postDelayed({
                                 if(fbAuth.currentUser==null){
-                                    botNavbar.isClickable = false
                                     loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,false)
                                     Handler().postDelayed({
                                         botNavbar.menu.getItem(3).setChecked(false)
                                         botNavbar.menu.getItem(thisHome.getLastId()).setChecked(true)
-                                    },1000)
+                                    },500)
                                 }
                                 else{
                                     loadFrag.transfer(parentFlManager,R.id.homeactivity_flmanager,ProfileFragment(thisContext,thisContext))
