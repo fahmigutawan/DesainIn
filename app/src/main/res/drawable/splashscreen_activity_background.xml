@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:gravity="fill">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/color_palet_blue"/>
+        </shape>
+    </item>
+    <item>
+        <bitmap android:src="@drawable/background_splashscreen"
+            android:gravity="right"/>
+    </item>
+</layer-list>

@@ -13,13 +13,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Artikel"
+                android:gravity="center"
+                android:fontFamily="@font/sfpro_display_black_bold"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:background="@color/color_palet_blue"
+                android:paddingTop="32dp"
+                android:paddingBottom="32dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
                 >
 
                 <ImageView
@@ -34,7 +49,8 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/home_discoveryfragment_artikeldetail_artikelbackground"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:layout_margin="16dp">
 
                 <TextView
                     android:id="@+id/discoveryfragment_artikeldetail_judultv"
@@ -42,13 +58,14 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sfpro_display_medium"
                     android:text=". . ."
+                    android:layout_marginBottom="8dp"
                     android:textColor="@color/black"
                     android:textSize="16dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/discoveryfragment_artikeldetail_penulistv"
@@ -57,7 +74,8 @@
                         android:layout_marginRight="8dp"
                         android:fontFamily="@font/sfpro_display_reguler"
                         android:textColor="@color/blue_cyan"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        />
 
                     <TextView
                         android:id="@+id/discoveryfragment_artikeldetail_tanggaltv"
@@ -65,7 +83,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/sfpro_display_reguler"
                         android:textColor="@color/black"
-                        android:textSize="10dp" />
+                        android:textSize="10dp"
+                        android:layout_marginBottom="8dp"/>
                 </LinearLayout>
 
                 <TextView
@@ -74,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sfpro_display_reguler"
                     android:textColor="@color/black"
-                    android:textSize="14dp" />
+                    android:textSize="12dp" />
 
             </LinearLayout>
 

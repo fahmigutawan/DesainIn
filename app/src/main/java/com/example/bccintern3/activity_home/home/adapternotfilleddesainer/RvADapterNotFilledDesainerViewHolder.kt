@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentDetailDesainer
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.example.bccintern3.nonactivity_invisiblefunction.LoadActivity
@@ -32,7 +33,8 @@ class RvADapterNotFilledDesainerViewHolder(inflater: LayoutInflater,
                                            private var designerList:ArrayList<String>,
                                            private var idDesignerKategori:ArrayList<String>,
                                            private var thisContext:Context,
-                                           private var appContext: Context
+                                           private var appContext: Context,
+                                           private var parentHome: HomeActivity
                                            )
     : RecyclerView.ViewHolder(inflater.inflate(R.layout.home_homefragment_notfill_desainer_border,parent,false))
 {
@@ -52,7 +54,8 @@ class RvADapterNotFilledDesainerViewHolder(inflater: LayoutInflater,
         clickableArea = itemView.findViewById(R.id.homefragment_notfill_desainerborder_layout)
     }
     fun bind(id:Int){
-        val imgSize = (parentView.width/4.2).toInt()
+        val imgSize = (parentView.width/2.7).toInt()
+        val height = imgSize*3/4
         val uid = designerList.get(id)
         val idKategori = idDesignerKategori.get(id)
         val ref = dbRef.refDesignerNode().child(idKategori).child(uid)
@@ -65,8 +68,8 @@ class RvADapterNotFilledDesainerViewHolder(inflater: LayoutInflater,
                 Picasso
                     .get()
                     .load(snapshot.child("icon").getValue().toString())
-                    .transform(RoundCornerRect(20f,0f,0f,0f,0f))
-                    .resize(imgSize,imgSize)
+                    .transform(RoundCornerRect(30f,0f,0f,0f,0f))
+                    .resize(imgSize,height)
                     .centerCrop()
                     .into(imageView)
 
@@ -92,6 +95,7 @@ class RvADapterNotFilledDesainerViewHolder(inflater: LayoutInflater,
 
         clickableArea.setOnClickListener {
             Handler().postDelayed({
+                parentHome.setLastId(1)
                 navbar.menu.getItem(0).setChecked(false)
                 navbar.menu.getItem(1).setChecked(true)
                 loadFrag.transfer(
@@ -103,7 +107,7 @@ class RvADapterNotFilledDesainerViewHolder(inflater: LayoutInflater,
                         navbar,
                         activity,
                         uid,
-                        idKategori,appContext))
+                        idKategori,appContext,parentHome))
             },1500)        }
     }
 }

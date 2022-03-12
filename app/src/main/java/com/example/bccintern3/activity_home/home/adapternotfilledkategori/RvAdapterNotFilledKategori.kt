@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bccintern3.activity_home.HomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class RvAdapterNotFilledKategori(private var parentView:View,
@@ -14,7 +15,8 @@ class RvAdapterNotFilledKategori(private var parentView:View,
                                  private var thisCOntext:Context,
                                  private var navbar:BottomNavigationView,
                                  private var activity: AppCompatActivity,
-                                 private var appContext: Context
+                                 private var appContext: Context,
+                                 private var parentHome: HomeActivity
                                  )
     : RecyclerView.Adapter<RvAdapterNotFilledKategoriViewHolder>()
 
@@ -53,7 +55,7 @@ class RvAdapterNotFilledKategori(private var parentView:View,
             thisCOntext,
             navbar,
             activity
-            ,appContext)
+            ,appContext,parentHome)
     }
     override fun onBindViewHolder(holder: RvAdapterNotFilledKategoriViewHolder, position: Int) {
         holder.bind(indexRandomized.get(position))

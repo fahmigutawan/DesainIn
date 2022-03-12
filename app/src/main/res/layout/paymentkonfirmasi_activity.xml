@@ -51,7 +51,7 @@
                         android:fontFamily="@font/sfpro_display_medium"
                         android:text="Informasi pembayaran"
                         android:textColor="@color/white"
-                        android:textSize="16dp" />
+                        android:textSize="14dp" />
                 </FrameLayout>
 
 
@@ -79,16 +79,16 @@
                 android:layout_marginBottom="4dp"
                 android:elevation="2dp"
                 android:id="@+id/paymentkonfirmasiactivity_chatbtn"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Chat Desainer"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="16dp"
+                android:textColor="@color/color_palet_white2"
+                android:textSize="12dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:background="@drawable/universal_yellow_lighter_button"
+                android:background="@drawable/universal_blue_button"
                 />
         </LinearLayout>
     </LinearLayout>

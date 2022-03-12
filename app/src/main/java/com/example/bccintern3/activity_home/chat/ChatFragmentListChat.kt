@@ -3,12 +3,15 @@ package com.example.bccintern3.activity_home.chat
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern3.R
 import com.example.bccintern3.activity_home.chat.adapterlistchat.RvAdapterListChat
+import com.example.bccintern3.nonactivity_invisiblefunction.BackHandler
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -29,6 +32,7 @@ class ChatFragmentListChat(private var thisContext:Context,
     private lateinit var fbAuth:FirebaseAuth
     private lateinit var roomId:ArrayList<String>
     private lateinit var uidLawan:ArrayList<String>
+    private var time:Long=0
 
     fun init(view:View){
         listChatRv = view.findViewById(R.id.chatfragment_listchat_rv)
@@ -43,6 +47,11 @@ class ChatFragmentListChat(private var thisContext:Context,
         init(view)
         loadData()
         runDataUpdater()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        runBackHandler(context)
     }
     fun loadData(){
         val uid = fbAuth.currentUser?.uid.toString()
@@ -116,5 +125,23 @@ class ChatFragmentListChat(private var thisContext:Context,
             }
 
         })
+    }
+    private fun runBackHandler(context: Context){
+        val back = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                val handler = context as BackHandler
+                val toast = Toast.makeText(thisContext,"Tekan kembali lagi untuk keluar", Toast.LENGTH_SHORT)
+
+                if(time+1500>System.currentTimeMillis()){
+                    toast.cancel()
+                    handler.exit(activity)
+                }
+                else{
+                    toast.show()
+                }
+                time = System.currentTimeMillis()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this,back)
     }
 }

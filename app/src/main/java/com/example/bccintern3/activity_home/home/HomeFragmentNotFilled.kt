@@ -3,6 +3,7 @@ package com.example.bccintern3.activity_home.home
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.TextView
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentListArtikel
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentListDesainer
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentListKategori
@@ -36,7 +38,8 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
                             private var activity:AppCompatActivity,
                             private var thisContext: Context,
                             private var navbar:BottomNavigationView,
-                            private var appContext: Context
+                            private var appContext: Context,
+                            private var parent:HomeActivity
                             ):Fragment(R.layout.home_homefragment_notfilled) {
 
     private lateinit var artikelAdapter:RvAdapterNotFilledArtikel
@@ -53,6 +56,7 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
     private lateinit var loadFrag:LoadFragment
     private lateinit var storageRef:StorageReference
     private lateinit var dbRef:DbReference
+    private var time:Long =0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -82,26 +86,29 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
     fun runTouchListener(){
         artikelLainTv.setOnClickListener {
             Handler().postDelayed({
+                parent.setLastId(1)
                 navbar.menu.getItem(0).setChecked(false)
                 navbar.menu.getItem(1).setChecked(true)
-                loadFrag.transfer(flManager,R.id.homeactivity_flmanager,DiscoveryFragmentListArtikel(flManager,thisContext,navbar,activity,appContext))
+                loadFrag.transfer(flManager,R.id.homeactivity_flmanager,DiscoveryFragmentListArtikel(flManager,thisContext,navbar,activity,appContext,parent))
             },1000)
         }
         kategoriLainTv.setOnClickListener {
             Handler().postDelayed({
+                parent.setLastId(1)
                 navbar.menu.getItem(0).setChecked(false)
                 navbar.menu.getItem(1).setChecked(true)
-                loadFrag.transfer(flManager,R.id.homeactivity_flmanager,DiscoveryFragmentListKategori(flManager,thisContext,navbar,activity,appContext))
+                loadFrag.transfer(flManager,R.id.homeactivity_flmanager,DiscoveryFragmentListKategori(flManager,thisContext,navbar,activity,appContext,parent))
             },1000)
         }
         desainerLainTv.setOnClickListener {
             Handler().postDelayed({
+                parent.setLastId(1)
                 navbar.menu.getItem(0).setChecked(false)
                 navbar.menu.getItem(1).setChecked(true)
                 loadFrag.transfer(
                     flManager,
                     R.id.homeactivity_flmanager,
-                    DiscoveryFragmentListDesainer(flManager,thisContext,navbar,null,activity,appContext))
+                    DiscoveryFragmentListDesainer(flManager,thisContext,navbar,null,activity,appContext,parent))
             },1000)
         }
     }
@@ -109,7 +116,7 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
         view.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 view.viewTreeObserver.removeOnGlobalLayoutListener(this)
-                kategoriAdapter = RvAdapterNotFilledKategori(view,flManager,thisContext,navbar,activity,appContext)
+                kategoriAdapter = RvAdapterNotFilledKategori(view,flManager,thisContext,navbar,activity,appContext,parent)
                 val gridLayoutManager = GridLayoutManager(thisContext,3)
                 kategoriRv.layoutManager = gridLayoutManager
                 kategoriRv.adapter = kategoriAdapter
@@ -121,8 +128,8 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
         view.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 view.viewTreeObserver.removeOnGlobalLayoutListener(this)
-                artikelAdapter = RvAdapterNotFilledArtikel(view,flManager,navbar,activity,appContext)
-                val gridLayoutManager = GridLayoutManager(thisContext,2,GridLayoutManager.VERTICAL,false)
+                artikelAdapter = RvAdapterNotFilledArtikel(view,flManager,navbar,activity,appContext,parent)
+                val gridLayoutManager = GridLayoutManager(thisContext,1,GridLayoutManager.HORIZONTAL,false)
                 artikelRv.layoutManager = gridLayoutManager
                 artikelRv.adapter = artikelAdapter
             }
@@ -157,12 +164,12 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
                             activity,
                             desainerNode,
                             idKategori,
-                            thisContext,appContext)
+                            thisContext,appContext,parent)
 
                         val gridLayoutManager = GridLayoutManager(
                             thisContext,
-                            3,
-                            GridLayoutManager.VERTICAL,
+                            1,
+                            GridLayoutManager.HORIZONTAL,
                             false)
 
                         desainerRv.layoutManager = gridLayoutManager
@@ -199,16 +206,16 @@ class HomeFragmentNotFilled(private var flManager: FragmentManager,
         val back = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 val handler = context as BackHandler
-                val time = System.currentTimeMillis()
                 val toast = Toast.makeText(thisContext,"Tekan kembali lagi untuk keluar",Toast.LENGTH_SHORT)
 
                 if(time+1500>System.currentTimeMillis()){
-                    handler.exit(activity)
                     toast.cancel()
+                    handler.exit(activity)
                 }
                 else{
                     toast.show()
                 }
+                time = System.currentTimeMillis()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this,back)

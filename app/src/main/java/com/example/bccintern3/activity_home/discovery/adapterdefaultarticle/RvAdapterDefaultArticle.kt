@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DataSnapshot
@@ -17,7 +18,8 @@ class RvAdapterDefaultArticle(private var parentView: View,
                               private var mainFlManager: FragmentManager,
                               private var activity:AppCompatActivity,
                               private var navbar:BottomNavigationView,
-                              private var appContext: Context
+                              private var appContext: Context,
+                              private var parentHome: HomeActivity
                               ):RecyclerView.Adapter<RvAdapterDefaultArticleViewHolder>() {
     private lateinit var arrAtribut:ArrayList<ArrayList<String>>
     private lateinit var dbRef:DbReference
@@ -44,7 +46,8 @@ class RvAdapterDefaultArticle(private var parentView: View,
             mainFlManager,
             activity,
             navbar,
-            appContext
+            appContext,
+            parentHome
         )
     }
     override fun onBindViewHolder(holder: RvAdapterDefaultArticleViewHolder, position: Int) {

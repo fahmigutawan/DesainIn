@@ -3,6 +3,7 @@ package com.example.bccintern3.activity_splashscreen
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.bccintern2.firsttime.OnboardActivity
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
@@ -21,9 +22,11 @@ class SplashScreen: AppCompatActivity() {
     private lateinit var fbAuth:FirebaseAuth
     private lateinit var dbRef:DbReference
     private lateinit var imageView:ImageView
+    private lateinit var splashScreenConstraint:ConstraintLayout
 
 
     fun init() {
+        splashScreenConstraint = findViewById(R.id.splashscreen_foregroundconstraint)
         load = LoadActivity()
         fbAuth = FirebaseAuth.getInstance()
         dbRef = DbReference()
@@ -43,13 +46,13 @@ class SplashScreen: AppCompatActivity() {
             .get()
             .load(R.drawable.logo)
             .resize(256,256)
-            .transform(RoundCornerRect(60f,0f,0f,0f,0f))
+            .transform(RoundCornerRect(30f,0f,0f,0f,0f))
             .into(imageView)
 
     }
     fun cekLogin(){
         if(fbAuth.currentUser==null){
-            load.loadActivityComplete(this, HomeActivity::class.java,this,true,2500)
+            load.loadActivityComplete(this, HomeActivity::class.java,this,true,3000)
         }
         else{
             val ref = dbRef.refUidNode(fbAuth.currentUser?.uid.toString()).child("profile")
@@ -59,7 +62,7 @@ class SplashScreen: AppCompatActivity() {
                     if(snapshot.child("isFirstTime").getValue().toString()=="true"){
                         load.loadActivityComplete(this@SplashScreen,OnboardActivity::class.java,this@SplashScreen,true,2500)
                     }else{
-                        load.loadActivityComplete(this@SplashScreen,HomeActivity::class.java,this@SplashScreen,true,2500)
+                        load.loadActivityComplete(this@SplashScreen,HomeActivity::class.java,this@SplashScreen,true,3000)
                     }
                 }
                 override fun onCancelled(error: DatabaseError) {

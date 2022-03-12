@@ -25,21 +25,6 @@
             android:gravity="end"
             android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/onboardactivity_logout_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Logout"
-                android:clickable="true"
-                android:textColor="#8A0000"
-                android:textSize="14dp"
-                android:fontFamily="@font/poppins_semibold"/>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="12dp" />
-
             <TextView
                 android:id="@+id/onboardactivity_lewati_tv"
                 android:layout_width="wrap_content"
@@ -47,8 +32,8 @@
                 android:text="Lewati"
                 android:clickable="true"
                 android:textColor="@color/black"
-                android:textSize="14dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:textSize="12dp"
+                android:fontFamily="@font/sfpro_display_reguler"
                 />
 
         </LinearLayout>
@@ -68,11 +53,11 @@
             android:layout_marginRight="32dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/universal_yellow_button"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/sfpro_display_reguler"
             android:text="Selanjutnya"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            android:textSize="16dp" />
+            android:textSize="12dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

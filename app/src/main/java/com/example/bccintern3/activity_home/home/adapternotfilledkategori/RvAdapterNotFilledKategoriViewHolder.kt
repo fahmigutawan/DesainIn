@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentDetailKategori
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.example.bccintern3.nonactivity_invisiblefunction.LoadFragment
@@ -27,7 +30,8 @@ class RvAdapterNotFilledKategoriViewHolder(inflater: LayoutInflater,
                                            private var thisContext:Context,
                                            private var navbar:BottomNavigationView,
                                            private var activity: AppCompatActivity,
-                                           private var appContext: Context
+                                           private var appContext: Context,
+                                           private var parentHome: HomeActivity
                                            )
     : RecyclerView.ViewHolder(inflater.inflate(R.layout.home_homefragment_notfill_kategori_border,parent,false))
 
@@ -37,13 +41,17 @@ class RvAdapterNotFilledKategoriViewHolder(inflater: LayoutInflater,
     private var imageView:ImageView=itemView.findViewById(R.id.homefragment_notfill_kategoriborder_iv)
     private var dbRef:DbReference= DbReference()
     private var loadFrag:LoadFragment
+    private var title:TextView
+    private var clickArea:LinearLayout
 
     init {
         loadFrag= LoadFragment()
+        title = itemView.findViewById(R.id.homefragment_notfill_kategoriborder_title)
+        clickArea = itemView.findViewById(R.id.homefragment_notfill_kategoriborder_clickarea)
     }
 
     fun bind(index:Int){
-            val tmp=parentView.width/4.2
+            val tmp=parentView.width/4.7
             val width=tmp.toInt()
             val height=tmp.toInt()
             val ref = dbRef.refCategoryPicture()
@@ -57,6 +65,8 @@ class RvAdapterNotFilledKategoriViewHolder(inflater: LayoutInflater,
                         .into(imageView)
                     runClickListener(index)
 
+                    title.setText(snapshot.child(index.toString()).child("title").getValue().toString())
+
                     ref.removeEventListener(this)
                 }
                 override fun onCancelled(error: DatabaseError) {
@@ -65,11 +75,12 @@ class RvAdapterNotFilledKategoriViewHolder(inflater: LayoutInflater,
             })
         }
     fun runClickListener(index: Int){
-        imageView.setOnClickListener {
+        clickArea.setOnClickListener {
             Handler().postDelayed({
+                parentHome.setLastId(1)
                 navbar.menu.getItem(0).setChecked(false)
                 navbar.menu.getItem(1).setChecked(true)
-                loadFrag.transfer(mainFlManager,R.id.homeactivity_flmanager,DiscoveryFragmentDetailKategori(mainFlManager,thisContext,navbar,index.toString(),activity,appContext))
+                loadFrag.transfer(mainFlManager,R.id.homeactivity_flmanager,DiscoveryFragmentDetailKategori(mainFlManager,thisContext,navbar,index.toString(),activity,appContext,parentHome))
             },1000)
         }
     }

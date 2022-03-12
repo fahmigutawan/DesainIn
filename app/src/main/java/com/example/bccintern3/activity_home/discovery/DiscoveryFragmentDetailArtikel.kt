@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.nonactivity_invisiblefunction.BackHandler
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,7 +28,8 @@ class DiscoveryFragmentDetailArtikel(private var hari:String,
                                      private val flManager:FragmentManager,
                                      private val navbar:BottomNavigationView,
                                      private val activity:AppCompatActivity,
-                                     private val appContext: Context
+                                     private val appContext: Context,
+                                     private var parentHome: HomeActivity
                                      ):Fragment(R.layout.home_discoveryfragment_artikel_detail) {
     private lateinit var articleImage:ImageView
     private lateinit var judulTv:TextView
@@ -108,7 +110,7 @@ class DiscoveryFragmentDetailArtikel(private var hari:String,
             override fun handleOnBackPressed() {
                 val handler = context as BackHandler
                 handler.loadFragment(flManager,R.id.homeactivity_flmanager,
-                    DiscoveryFragmentDefault(flManager,context, navbar, activity,appContext)
+                    DiscoveryFragmentDefault(flManager,context, navbar, activity,appContext,parentHome)
                 )
             }
         }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bccintern3.activity_home.HomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class RvAdapterListArtikel(private var parentView: View,
@@ -14,7 +15,8 @@ class RvAdapterListArtikel(private var parentView: View,
                            private var artikelAtribut:ArrayList<ArrayList<String>>,
                            private var navbar:BottomNavigationView,
                            private var activity: AppCompatActivity,
-                           private var appContext: Context
+                           private var appContext: Context,
+                           private var parentHome: HomeActivity
                            ): RecyclerView.Adapter<RvAdapterListArtikelViewHolder>()
 {
     private var param = artikelAtribut.get(0)
@@ -26,7 +28,7 @@ class RvAdapterListArtikel(private var parentView: View,
             ,mainFlManager
             ,navbar
             ,activity
-            ,appContext)
+            ,appContext,parentHome)
     }
 
     override fun onBindViewHolder(holder: RvAdapterListArtikelViewHolder, position: Int) {

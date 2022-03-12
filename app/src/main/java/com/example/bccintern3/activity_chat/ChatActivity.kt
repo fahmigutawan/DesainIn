@@ -1,13 +1,17 @@
 package com.example.bccintern3.activity_chat
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.PersistableBundle
 import android.util.Log
+import android.view.MenuItem
+import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -27,7 +31,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 
-class ChatActivity:AppCompatActivity(R.layout.chatroom_activity) {
+class ChatActivity:AppCompatActivity(R.layout.chatroom_activity),PopupMenu.OnMenuItemClickListener {
     private lateinit var imageProfile:ImageView
     private lateinit var nameTv:TextView
     private lateinit var chatRv:RecyclerView
@@ -41,8 +45,10 @@ class ChatActivity:AppCompatActivity(R.layout.chatroom_activity) {
     private lateinit var tokenLawan:String
     private lateinit var chatAdapter:RvAdapterChat
     private lateinit var linearLayoutManager: LinearLayoutManager
+    private lateinit var popupMenu:Button
     var message = ArrayList<String>()
     var sender = ArrayList<String>()
+    private var time:Long=0
 
     fun init(){
         imageProfile = findViewById(R.id.chatroom_activity_profile_image)
@@ -50,6 +56,7 @@ class ChatActivity:AppCompatActivity(R.layout.chatroom_activity) {
         chatRv = findViewById(R.id.chatroom_activity_chatrv)
         chatInput = findViewById(R.id.chatroom_activity_chatinputEt)
         sendBtn = findViewById(R.id.chatroom_activity_sendBtn)
+        popupMenu = findViewById(R.id.chatroom_activity_menubtn)
         loadAct = LoadActivity()
         dbRef = DbReference()
 
@@ -184,6 +191,7 @@ class ChatActivity:AppCompatActivity(R.layout.chatroom_activity) {
             }
         }
     }
+
     fun loadLastChat(){
         val ref = dbRef.refChatRoomNode().child(roomId).child("chat")
 
@@ -257,5 +265,65 @@ class ChatActivity:AppCompatActivity(R.layout.chatroom_activity) {
             startActivity(intent)
             this.finish()
         },1000)
+    }
+
+    fun showPop(v: View){
+        val popup = PopupMenu(this,v)
+        popup.setOnMenuItemClickListener(this)
+        popup.inflate(R.menu.chat_popup_menu)
+        popup.show()
+    }
+    override fun onMenuItemClick(item: MenuItem?): Boolean {
+        when(item?.itemId){
+            R.id.chatactivity_menu_finishpayment->{
+                runDialogOne()
+                return true
+            }
+            else->{
+                return false
+            }
+        }
+    }
+    fun runDialogOne(){
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.chatroom_selesaiorder_dialog)
+
+        val yakin = dialog.findViewById<Button>(R.id.chatroom_selesaiorder_yakin)
+        val kembali = dialog.findViewById<Button>(R.id.chatroom_selesaiorder_kembali)
+
+        yakin.setOnClickListener {
+            dialog.dismiss()
+            runDialogTwo()
+        }
+        kembali.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+    fun runDialogTwo(){
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.chatroom_tulisrating_dialog)
+
+        val kirim = dialog.findViewById<Button>(R.id.chatroom_tulisrating_kirimbtn)
+        kirim.setOnClickListener {
+            dialog.dismiss()
+            runDialogThree()
+        }
+        dialog.show()
+    }
+    fun runDialogThree(){
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.chatroom_kembalimenuawal_dialog)
+
+        val kembaliAwal = dialog.findViewById<Button>(R.id.chatroom_kembalimenuawal_kembalibtn)
+        kembaliAwal.setOnClickListener {
+            if(time+1500>System.currentTimeMillis()){
+
+            }else{
+                loadAct.loadActivityDisposable(this,HomeActivity::class.java,this,true)
+            }
+            time=System.currentTimeMillis()
+        }
+        dialog.show()
     }
 }

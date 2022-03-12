@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bccintern3.activity_home.HomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlin.random.Random
 
@@ -15,7 +16,8 @@ class RvAdapterDefaultKategori(private var parentView: View,
                                private var thisContext: Context,
                                private var navbar:BottomNavigationView,
                                private val activity: AppCompatActivity,
-                               private val appContext: Context
+                               private val appContext: Context,
+                               private var parentHome:HomeActivity
                                ) : RecyclerView.Adapter<RvAdapterDefaultKategoriViewHolder>() {
 
     private var indexRandomized:ArrayList<Int>
@@ -54,7 +56,8 @@ class RvAdapterDefaultKategori(private var parentView: View,
             ,thisContext
             ,navbar
             ,activity
-            ,appContext)
+            ,appContext
+            ,parentHome)
     }
 
     override fun onBindViewHolder(holder: RvAdapterDefaultKategoriViewHolder, position: Int) {

@@ -9,10 +9,14 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bccintern2.picasso.CircleTransform
 import com.example.bccintern3.R
 import com.example.bccintern3.activity_chat.ChatActivity
+import com.example.bccintern3.activity_home.HomeActivity
+import com.example.bccintern3.activity_home.discovery.adapterdetaildesainerreview.RvAdapterDetailDesainerReview
 import com.example.bccintern3.activity_home.discovery.vp_adapterdetaildesainer.VpAdapterDetailDesainer
 import com.example.bccintern3.activity_login.LoginActivity
 import com.example.bccintern3.dummyactivity_payment.DummyPaymentActivity
@@ -31,7 +35,8 @@ class DiscoveryFragmentDetailDesainer(flManager:FragmentManager,
                                       activity:AppCompatActivity,
                                       uidSelected:String,
                                       idKategoriSelected:String,
-                                      appContext: Context
+                                      appContext: Context,
+                                      private var parentHome: HomeActivity
 ):Fragment(R.layout.home_discoveryfragment_desainer_detail) {
     private lateinit var bannerVp:ViewPager2
     private lateinit var nameTv:TextView
@@ -47,6 +52,8 @@ class DiscoveryFragmentDetailDesainer(flManager:FragmentManager,
     private lateinit var loadAct:LoadActivity
     private lateinit var dbRef:DbReference
     private lateinit var vpAdapter:VpAdapterDetailDesainer
+    private lateinit var rvAdapterReview:RvAdapterDetailDesainerReview
+    private lateinit var reviewRv:RecyclerView
     private lateinit var fbAuth:FirebaseAuth
 
     private val flManager:FragmentManager
@@ -82,6 +89,7 @@ class DiscoveryFragmentDetailDesainer(flManager:FragmentManager,
         loadAct = LoadActivity()
         dbRef = DbReference()
         fbAuth = FirebaseAuth.getInstance()
+        reviewRv = view.findViewById(R.id.discoveryfragment_desainerdetail_reviewrv)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -90,6 +98,7 @@ class DiscoveryFragmentDetailDesainer(flManager:FragmentManager,
         init(view)
         setVpBanner(view)
         setDataPreview()
+        setReviewRv()
         runClickListener()
     }
     override fun onAttach(context: Context) {
@@ -101,7 +110,7 @@ class DiscoveryFragmentDetailDesainer(flManager:FragmentManager,
             override fun handleOnBackPressed() {
                 val handler = context as BackHandler
 
-                handler.loadFragment(flManager,R.id.homeactivity_flmanager, DiscoveryFragmentDefault(flManager,thisContext, navbar, activity,appContext))
+                handler.loadFragment(flManager,R.id.homeactivity_flmanager, DiscoveryFragmentDefault(flManager,thisContext, navbar, activity,appContext,parentHome))
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this,back)
@@ -132,6 +141,25 @@ class DiscoveryFragmentDetailDesainer(flManager:FragmentManager,
             }
 
         })
+    }
+    fun setReviewRv(){
+        val nama = ArrayList<String>()
+        val review = ArrayList<String>()
+
+        nama.add("Dwi Handoko")
+        nama.add("Rayyan Putra")
+        nama.add("Mirza Malik")
+        nama.add("Diara Putri")
+
+        review.add("Ilustrasinya bagus banget, waktu pengerjaan juga cepat!")
+        review.add("Kualitasnya bagus")
+        review.add("Great product!")
+        review.add("Pemilihan warnanya sangat bagus")
+
+        rvAdapterReview = RvAdapterDetailDesainerReview(nama,review)
+        reviewRv.layoutManager = LinearLayoutManager(thisContext,LinearLayoutManager.VERTICAL,false)
+        reviewRv.adapter = rvAdapterReview
+
     }
     fun setDataPreview(){
         val ref = dbRef.refDesignerNode().child(idKategoriSelected).child(uidSelected)

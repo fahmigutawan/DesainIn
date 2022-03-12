@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.vp_adapterdetailkategori.VpAdapterDetailKategori
 import com.example.bccintern3.nonactivity_invisiblefunction.BackHandler
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
@@ -29,7 +30,8 @@ class DiscoveryFragmentDetailKategori(private val flManager:FragmentManager,
                                       private val navbar: BottomNavigationView,
                                       private val id:String,
                                       private val activity: AppCompatActivity,
-                                      private var appContext: Context
+                                      private var appContext: Context,
+                                      private var parent:HomeActivity
 ):Fragment(R.layout.home_discoveryfragment_kategori_detail) {
     private lateinit var judulTv:TextView
     private lateinit var gambarVp:ViewPager2
@@ -71,7 +73,7 @@ class DiscoveryFragmentDetailKategori(private val flManager:FragmentManager,
             override fun handleOnBackPressed() {
                 val handler = context as BackHandler
                 handler.loadFragment(flManager,R.id.homeactivity_flmanager,
-                    DiscoveryFragmentDefault(flManager,context, navbar, activity,appContext)
+                    DiscoveryFragmentDefault(flManager,context, navbar, activity,appContext,parent)
                 )
             }
         }
@@ -117,7 +119,7 @@ class DiscoveryFragmentDetailKategori(private val flManager:FragmentManager,
                 loadFrag.transfer(
                     flManager,
                     R.id.homeactivity_flmanager,
-                    DiscoveryFragmentListDesainer(flManager,thisContext,navbar,id,activity,appContext))
+                    DiscoveryFragmentListDesainer(flManager,thisContext,navbar,id,activity,appContext,parent))
             },1500)
         }
     }

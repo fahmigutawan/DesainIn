@@ -5,18 +5,39 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:elevation="10dp"
-        android:id="@+id/homefragment_notfill_kategoriborder_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:background="@drawable/universal_blue_button"
+        android:id="@+id/homefragment_notfill_kategoriborder_clickarea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/homefragment_notfill_kategoriborder_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:padding="8dp"
+            android:id="@+id/homefragment_notfill_kategoriborder_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=". . ."
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/color_palet_white3"
+            android:fontFamily="@font/sfpro_display_reguler"
+            android:textSize="12dp"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

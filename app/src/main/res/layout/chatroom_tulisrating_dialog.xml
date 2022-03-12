@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    >
+
+    <LinearLayout
+        android:padding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:paddingLeft="64dp"
+            android:paddingRight="64dp"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beri review untuk desainer"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:fontFamily="@font/sfpro_display_medium"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:padding="16dp"
+                android:gravity="top"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:background="@drawable/universal_white_textinput"
+                android:fontFamily="@font/sfpro_display_reguler"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_gravity="center"
+            android:background="@drawable/universal_blue_button"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:fontFamily="@font/sfpro_display_medium"
+            android:layout_marginTop="16dp"
+            android:id="@+id/chatroom_tulisrating_kirimbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kirim" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

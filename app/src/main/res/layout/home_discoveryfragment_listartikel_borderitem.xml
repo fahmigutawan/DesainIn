@@ -37,7 +37,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="Judul"
             android:textColor="@color/black"
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/discoveryfragment_listartikel_border_tanggaltv"

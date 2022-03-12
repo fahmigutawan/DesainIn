@@ -5,183 +5,214 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/color_palet_blue">
-
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
-
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/discoveryfragment_desainerdetail_banner_vp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="4dp"/>
-                </FrameLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="32dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/discoveryfragment_desainerdetail_widthparam_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_palet_blue"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/discoveryfragment_desainerdetail_banner_vp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                    <ImageView
-                        android:id="@+id/discoveryfragment_desainerdetail_profil_iv"
-                        android:layout_width="84dp"
-                        android:layout_height="84dp"
-                        android:background="@drawable/icon_noprofile" />
+                    <LinearLayout
+                        android:id="@+id/discoveryfragment_desainerdetail_widthparam_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/universal_white_textview"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/discoveryfragment_desainerdetail_profil_iv"
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/icon_noprofile" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="16dp">
+
+                            <TextView
+                                android:id="@+id/discoveryfragment_desainerdetail_nama_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text=". . ."
+                                android:maxLines="1"
+                                android:textColor="@color/black"
+                                android:textSize="16dp" />
+
+                            <TextView
+                                android:id="@+id/discoveryfragment_desainerdetail_kategori_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-6dp"
+                                android:fontFamily="@font/poppins_reguler"
+                                android:text=". . ."
+                                android:maxLines="1"
+                                android:textSize="14dp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/universal_white_textview"
                         android:orientation="vertical"
-                        android:paddingLeft="16dp">
+                        android:padding="16dp">
 
                         <TextView
-                            android:id="@+id/discoveryfragment_desainerdetail_nama_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:text=". . ."
+                            android:fontFamily="@font/sfpro_display_black_bold"
+                            android:text="Deskripsi"
                             android:textColor="@color/black"
-                            android:textSize="18dp" />
+                            android:textSize="14dp" />
 
                         <TextView
-                            android:id="@+id/discoveryfragment_desainerdetail_kategori_tv"
+                            android:id="@+id/discoveryfragment_desainerdetail_deskripsi_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-6dp"
-                            android:fontFamily="@font/poppins_reguler"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/poppins_medium"
                             android:text=". . ."
-                            android:textColor="@color/black" />
+                            android:textColor="@color/dark_gray"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/discoveryfragment_desainerdetail_lokasi_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/icon_location"
+                            android:fontFamily="@font/poppins_reguler"
+                            android:gravity="center_vertical"
+                            android:text="Kota ..."
+                            android:textColor="@color/black"
+                            android:textSize="12dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/icon_money"
+                                android:fontFamily="@font/poppins_reguler"
+                                android:gravity="center_vertical"
+                                android:text="Mulai dari Rp."
+                                android:textColor="@color/black"
+                                android:textSize="12dp" />
+
+                            <TextView
+                                android:id="@+id/discoveryfragment_desainerdetail_harga_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_reguler"
+                                android:gravity="center_vertical"
+                                android:text=". . ."
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
                     </LinearLayout>
+
+
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Deskripsi"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:id="@+id/discoveryfragment_desainerdetail_deskripsi_tv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text=". . ."
-                    android:textColor="@color/dark_gray"
-                    android:textSize="14dp" />
-
-                <TextView
-                    android:id="@+id/discoveryfragment_desainerdetail_lokasi_tv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/icon_location"
-                    android:fontFamily="@font/poppins_reguler"
-                    android:gravity="center_vertical"
-                    android:text="Kota ..."
+                    android:fontFamily="@font/sfpro_display_black_bold"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:text="Review pengguna"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/discoveryfragment_desainerdetail_reviewrv"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/icon_money"
-                        android:fontFamily="@font/poppins_reguler"
-                        android:gravity="center_vertical"
-                        android:text="Mulai dari Rp."
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:id="@+id/discoveryfragment_desainerdetail_harga_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_reguler"
-                        android:gravity="center_vertical"
-                        android:text=". . ."
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <Button
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:id="@+id/discoveryfragment_desainerdetail_chat_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/universal_white_button"
-                        android:fontFamily="@font/inter_bold"
-                        android:text="Chat"
-                        android:textAllCaps="false"
-                        android:textSize="16dp" />
-
-                    <Button
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:id="@+id/discoveryfragment_desainerdetail_order_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/universal_yellow_button"
-                        android:fontFamily="@font/inter_bold"
-                        android:text="Order"
-                        android:textAllCaps="false"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-                </LinearLayout>
-
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/discoveryfragment_desainerdetail_chat_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/universal_white_button"
+                android:fontFamily="@font/inter_bold"
+                android:text="Chat"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/discoveryfragment_desainerdetail_order_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/universal_yellow_button"
+                android:fontFamily="@font/inter_bold"
+                android:text="Order"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
         </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

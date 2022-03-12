@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.nonactivity_invisiblefunction.BackHandler
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.example.bccintern3.nonactivity_invisiblefunction.LoadFragment
@@ -24,7 +25,8 @@ class HomeFragment(private var flManager: FragmentManager,
                    private var activity:AppCompatActivity,
                    private var thisContext: Context,
                    private var navbar:BottomNavigationView,
-                   private var appContext: Context
+                   private var appContext: Context,
+                   private var parent:HomeActivity
                    ) :
     Fragment(R.layout.home_homefragment),
     BackHandler
@@ -124,8 +126,8 @@ class HomeFragment(private var flManager: FragmentManager,
                                             uid,
                                             nama,
                                             idKategori,
-                                            appContext
-                                        )
+                                            appContext,
+                                        parent)
                                     )
                                 }
                             }
@@ -149,7 +151,7 @@ class HomeFragment(private var flManager: FragmentManager,
                                             nama,
                                             idKategori,
                                             appContext
-                                        )
+                                        ,parent)
                                     )
                                 }
                             }
@@ -172,7 +174,7 @@ class HomeFragment(private var flManager: FragmentManager,
         loadFrag.transfer(flManager,fragLayout,notFilled)
     }
     fun init(view:View){
-        notFilled = HomeFragmentNotFilled(flManager,activity,thisContext,navbar,appContext)
+        notFilled = HomeFragmentNotFilled(flManager,activity,thisContext,navbar,appContext,parent)
         searchEt = view.findViewById(R.id.home_homefragment_search_et)
         fragLayout = R.id.home_homefragment_fl
         loadFrag = LoadFragment()

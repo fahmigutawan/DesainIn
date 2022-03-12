@@ -22,7 +22,6 @@ class OnboardActivity:AppCompatActivity() {
     private var manager = supportFragmentManager
     private lateinit var nxtBtn:Button
     private lateinit var passBtn:TextView
-    private lateinit var signoutBtn:TextView
     private lateinit var loadActivity: LoadActivity
     private var point1 = PointOne()
     private var point2 = PointTwo()
@@ -44,7 +43,6 @@ class OnboardActivity:AppCompatActivity() {
         //deklarasi
         nxtBtn = findViewById(R.id.firsttimelogin_next_btn)
         passBtn = findViewById(R.id.onboardactivity_lewati_tv)
-        signoutBtn = findViewById(R.id.onboardactivity_logout_tv)
         dbRef = DbReference()
         fbAuth = FirebaseAuth.getInstance()
         mGoogleSignInClient = GoogleSignIn.getClient(this,gso)
@@ -90,12 +88,6 @@ class OnboardActivity:AppCompatActivity() {
                     loadActivity(HomeActivity::class.java,true)
                 }
             }
-        }
-        signoutBtn.setOnClickListener {
-            signOut()
-            Handler().postDelayed({
-                loadActivity(LoginActivity::class.java,true)
-            },1500)
         }
 
     }

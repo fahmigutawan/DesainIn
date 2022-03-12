@@ -23,19 +23,19 @@
             android:gravity="center"
             android:text="Edit Profil"
             android:textColor="@color/black"
-            android:textSize="24dp" />
+            android:textSize="20dp" />
 
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
-            android:foreground="@drawable/icon_profile_border">
+            android:foreground="@drawable/ic_profile_fg">
 
             <ImageView
                 android:id="@+id/editprofile_picture_imageview"
-                android:layout_width="256px"
-                android:layout_height="256px"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
                 android:layout_gravity="center"
                 android:background="@drawable/icon_noprofile"
                 android:clickable="true" />
@@ -55,7 +55,7 @@
                 android:fontFamily="@font/sfpro_display_medium"
                 android:text="Nama lengkap"
                 android:textColor="@color/color_palet_white2"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"
                     android:textColor="@color/black"
-                    android:textSize="14dp" />
+                    android:textSize="12dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -83,7 +83,7 @@
                 android:fontFamily="@font/sfpro_display_medium"
                 android:text="Email"
                 android:textColor="@color/color_palet_white2"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"
                     android:textColor="@color/mid_gray"
-                    android:textSize="14dp" />
+                    android:textSize="12dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -112,7 +112,7 @@
                 android:fontFamily="@font/sfpro_display_medium"
                 android:text="Nomor telepon"
                 android:textColor="@color/color_palet_white2"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -132,16 +132,14 @@
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"
                     android:textColor="@color/black"
-                    android:textSize="14dp" />
+                    android:textSize="12dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/editprofile_save_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
                 android:layout_marginTop="64dp"
-                android:layout_marginRight="32dp"
                 android:background="@drawable/universal_yellow_lighter_button"
                 android:fontFamily="@font/sfpro_display_medium"
                 android:text="Simpan"

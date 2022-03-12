@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentDetailKategori
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.example.bccintern3.nonactivity_invisiblefunction.LoadActivity
@@ -30,7 +31,8 @@ class RvAdapterListKategoriViewHolder(inflater: LayoutInflater,
                                       private var thisContext:Context,
                                       private var navbar:BottomNavigationView,
                                       private var activity: AppCompatActivity,
-                                      private var appContext: Context
+                                      private var appContext: Context,
+                                      private var parentHome: HomeActivity
                                       )
     :RecyclerView.ViewHolder(inflater.inflate(R.layout.home_discoveryfragment_listkategori_borderitem,parent,false))
 {
@@ -80,7 +82,7 @@ class RvAdapterListKategoriViewHolder(inflater: LayoutInflater,
     fun runClickListener(id:String){
         clickableArea.setOnClickListener {
             Handler().postDelayed({
-                loadFrag.transfer(mainFlManager,R.id.homeactivity_flmanager,DiscoveryFragmentDetailKategori(mainFlManager,thisContext,navbar,id,activity,appContext))
+                loadFrag.transfer(mainFlManager,R.id.homeactivity_flmanager,DiscoveryFragmentDetailKategori(mainFlManager,thisContext,navbar,id,activity,appContext,parentHome))
             },1000)
         }
     }

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.adapterdefaultarticle.RvAdapterDefaultArticle
 import com.example.bccintern3.activity_home.discovery.adapterdefaultcategory.RvAdapterDefaultKategori
 import com.example.bccintern3.nonactivity_invisiblefunction.BackHandler
@@ -25,7 +26,8 @@ class DiscoveryFragmentDefault(private val flManager:FragmentManager,
                                private val thisContext: Context,
                                private val navbar:BottomNavigationView,
                                private var activity: AppCompatActivity,
-                               private var appContext: Context
+                               private var appContext: Context,
+                               private var parentHome:HomeActivity
                                ):Fragment(R.layout.home_discoveryfragment_default) {
 
     private lateinit var kategoriAdapter:RvAdapterDefaultKategori
@@ -34,6 +36,7 @@ class DiscoveryFragmentDefault(private val flManager:FragmentManager,
     private lateinit var artikelRv:RecyclerView
     private lateinit var artikelLainTv:TextView
     private lateinit var loadFrag:LoadFragment
+    private var time:Long=0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -61,18 +64,18 @@ class DiscoveryFragmentDefault(private val flManager:FragmentManager,
                 loadFrag.transfer(
                     flManager,
                     R.id.homeactivity_flmanager,
-                    DiscoveryFragmentListArtikel(flManager,thisContext,navbar,activity,appContext)
+                    DiscoveryFragmentListArtikel(flManager,thisContext,navbar,activity,appContext,parentHome)
                 )},1000)
         }
     }
     fun setKategori(view: View){
-        kategoriAdapter = RvAdapterDefaultKategori(view,flManager,thisContext,navbar,activity,appContext)
+        kategoriAdapter = RvAdapterDefaultKategori(view,flManager,thisContext,navbar,activity,appContext,parentHome)
         val gridLayoutManager = GridLayoutManager(thisContext,3)
         kategoriRv.layoutManager = gridLayoutManager
         kategoriRv.adapter = kategoriAdapter
     }
     fun setArtikel(view: View){
-        artikelAdapter = RvAdapterDefaultArticle(view,flManager,activity,navbar,appContext)
+        artikelAdapter = RvAdapterDefaultArticle(view,flManager,activity,navbar,appContext,parentHome)
         val linearLayoutManager = LinearLayoutManager(thisContext)
         artikelRv.layoutManager = linearLayoutManager
         artikelRv.adapter = artikelAdapter
@@ -88,16 +91,16 @@ class DiscoveryFragmentDefault(private val flManager:FragmentManager,
         val back = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 val handler = context as BackHandler
-                val time = System.currentTimeMillis()
-                val toast = Toast.makeText(thisContext,"Tekan kembali lagi untuk keluar", Toast.LENGTH_SHORT)
+                val toast = Toast.makeText(thisContext,"Tekan kembali lagi untuk keluar",Toast.LENGTH_SHORT)
 
                 if(time+1500>System.currentTimeMillis()){
-                    handler.exit(activity)
                     toast.cancel()
+                    handler.exit(activity)
                 }
                 else{
                     toast.show()
                 }
+                time = System.currentTimeMillis()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this,back)

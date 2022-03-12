@@ -17,6 +17,7 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable-v24/icon_google.xml" value="0.1845" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable-v24/icon_logout.xml" value="0.1075" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable-v24/icon_next.xml" value="0.2535" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable-v24/icon_profile_border.xml" value="0.2155" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable-v24/login_activity_google_button.xml" value="0.1845" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/chat_activity_bubble_kita.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/chat_activity_bubble_lawan.xml" value="0.211" />
@@ -41,6 +42,7 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/homeactivity_navbar_user_icon.xml" value="0.2145" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/homeactivity_navbr_discovery_icon.xml" value="0.16" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2145" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/ic_profile_fg.xml" value="0.2155" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_archive_selected.xml" value="0.202" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_archive_un_selected.xml" value="0.202" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_bookmark_default.xml" value="0.271" />
@@ -53,6 +55,7 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_home_selected.xml" value="0.2535" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_location.xml" value="0.271" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_logo.xml" value="0.105" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_menu.xml" value="0.156" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_money.xml" value="0.271" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_navbar_chat.xml" value="0.2535" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_navbar_discover.xml" value="0.2535" />
@@ -60,26 +63,35 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_navbar_user.xml" value="0.2535" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_noprofile.xml" value="0.202" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_notification.xml" value="0.136" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_profile_fg.xml" value="0.2155" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_search.xml" value="0.204" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_send.xml" value="0.225" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_three_dot.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/icon_user.xml" value="0.2145" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/loginsignup_activity_background.xml" value="0.2385" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/splashscreen_activity_background.xml" value="0.156" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/splashscreen_activity_bg_logo.xml" value="0.156" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_blue_background.xml" value="0.202" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_blue_button.xml" value="0.156" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_darkblue_button.xml" value="0.271" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_gray_background.xml" value="0.202" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_red_button.xml" value="0.1" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_ripple_list_background.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_ripple_rv_background.xml" value="0.2395" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_threedot.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_white_button.xml" value="0.271" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_white_textinput.xml" value="0.1845" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_white_textview.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_yellow_button.xml" value="0.2385" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/drawable/universal_yellow_lighter_button.xml" value="0.211" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/activity_main.xml" value="0.1956521739130435" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_activity.xml" value="0.2" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_activity.xml" value="0.16" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_activity_lawan_border.xml" value="0.2" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_activity_user_border.xml" value="0.2" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/editprofile_activity.xml" value="0.25" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_kembalimenuawal_dialog.xml" value="0.19655797101449277" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_selesaiorder_dialog.xml" value="0.33" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/chatroom_tulisrating_dialog.xml" value="0.33" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/editprofile_activity.xml" value="0.22" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/firsttime_activity.xml" value="0.16077898550724637" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/firsttime_login.xml" value="0.16077898550724637" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_activity.xml" value="0.25" />
@@ -93,7 +105,8 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_default.xml" value="0.23505434782608695" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_default_artikelborder.xml" value="0.5" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_default_kategoriborder.xml" value="0.27291666666666664" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_desainer_detail.xml" value="0.182518115942029" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_desainer_detail.xml" value="0.18" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_desainer_detail_reviewborder.xml" value="0.19655797101449277" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_desainer_detail_vpborder.xml" value="0.19655797101449277" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_desainer_perkategori.xml" value="0.23505434782608695" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_discoveryfragment_kategori_detail.xml" value="0.2" />
@@ -114,18 +127,23 @@
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_homefragment_notfilled.xml" value="0.22" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/home_profilefragment.xml" value="0.22" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/hubungi_activity.xml" value="0.19655797101449277" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/login_activity.xml" value="0.33" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/login_activity.xml" value="1.0" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/onboard_activity.xml" value="0.25" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/payment_activity.xml" value="0.25" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/paymentkonfirmasi_activity.xml" value="0.2" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/paymentkorfirmasi_activity_backkonfirmasi.xml" value="0.33" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointone_fragment.xml" value="0.2" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointthree_fragment.xml" value="0.12552083333333333" />
-        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointtwo_fragment.xml" value="0.67" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/pointtwo_fragment.xml" value="0.17049180327868851" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/riwayatorder_activity.xml" value="0.19655797101449277" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/riwayatorder_activity_list_border.xml" value="0.19655797101449277" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/riwayatorder_detail_activity.xml" value="0.19655797101449277" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/signup_activity.xml" value="0.33" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/signup_activity_spinner_style.xml" value="0.13645833333333332" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/splash_screen.xml" value="0.1956521739130435" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/splashscreen_activity.xml" value="0.1956521739130435" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/layout/splashscreen_activity_bg_logo.xml" value="0.19655797101449277" />
+        <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/menu/chat_popup_menu.xml" value="0.27291666666666664" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/menu/home_bottom_navbar.xml" value="0.27291666666666664" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.105" />
         <entry key="..\:/Projek Koding/Android Studio/BCCIntern3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1335" />

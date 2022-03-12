@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentDetailArtikel
 import com.example.bccintern3.nonactivity_invisiblefunction.LoadFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -25,7 +26,8 @@ class RvAdapterNotFilledArtikelViewHolder(inflater: LayoutInflater,
                                           mainFlManager: FragmentManager,
                                           private var navbar: BottomNavigationView,
                                           private var activity: AppCompatActivity,
-                                          private var appContext: Context
+                                          private var appContext: Context,
+                                          private var parentHome: HomeActivity
 )
     :RecyclerView.ViewHolder(inflater.inflate(R.layout.home_homefragment_notfill_artikel_border,parent,false))
 {
@@ -60,7 +62,7 @@ class RvAdapterNotFilledArtikelViewHolder(inflater: LayoutInflater,
         this.tahun=tahun
         this.id=id
 
-        val width = (parentView.width/2.5).toInt()
+        val width = (parentView.width/3).toInt()
         val height = width/2
         /**set gambar**/
         Picasso
@@ -76,9 +78,7 @@ class RvAdapterNotFilledArtikelViewHolder(inflater: LayoutInflater,
     }
     fun runClickListener(){
         clickArea.setOnClickListener {
-            Log.e("HARI",hari)
-            Log.e("BULAN",bulan)
-            Log.e("ID",id)
+            parentHome.setLastId(1)
             if(hari!="" && bulan!="" && tahun!="" && id!=""){
                 Handler().postDelayed({
                     navbar.menu.getItem(0).setChecked(false)
@@ -86,7 +86,7 @@ class RvAdapterNotFilledArtikelViewHolder(inflater: LayoutInflater,
                     loadFrag.transfer(
                         mainFlManager,
                         R.id.homeactivity_flmanager,
-                        DiscoveryFragmentDetailArtikel(hari,bulan, tahun, id,mainFlManager,navbar,activity,appContext)
+                        DiscoveryFragmentDetailArtikel(hari,bulan, tahun, id,mainFlManager,navbar,activity,appContext,parentHome)
                     )
                 },1000)
             }

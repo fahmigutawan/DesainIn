@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DataSnapshot
@@ -17,13 +18,14 @@ class RvAdapterNotFilledArtikel(private var parentView: View,
                                 private var mainFlManager: FragmentManager,
                                 private var navbar:BottomNavigationView,
                                 private var activity: AppCompatActivity,
-                                private var appContext: Context
+                                private var appContext: Context,
+                                private var parentHome: HomeActivity
                                 )
     :RecyclerView.Adapter<RvAdapterNotFilledArtikelViewHolder>()
 {
     private lateinit var arrAtribut:ArrayList<ArrayList<String>>
     private lateinit var dbRef: DbReference
-    private var maxCount=2
+    private var maxCount=3
 
     fun init(){
         arrAtribut = ArrayList()
@@ -43,7 +45,7 @@ class RvAdapterNotFilledArtikel(private var parentView: View,
             ,parentView
             ,mainFlManager
             ,navbar
-            ,activity,appContext)
+            ,activity,appContext,parentHome)
     }
     override fun onBindViewHolder(holder: RvAdapterNotFilledArtikelViewHolder, position: Int) {
         val ref = dbRef.refArticle()

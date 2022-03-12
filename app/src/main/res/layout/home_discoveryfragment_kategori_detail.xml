@@ -22,7 +22,7 @@
             android:fontFamily="@font/sfpro_display_black_bold"
             android:gravity="center"
             android:padding="32dp"
-            android:text="Nama Kategori"
+            android:text=". . ."
             android:textColor="@color/color_palet_white3"
             android:textSize="20dp" />
 
@@ -59,9 +59,11 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/poppins_reguler"
                         android:textColor="@color/black"
-                        android:textSize="14dp" />
+                        android:textSize="12dp" />
 
                     <Button
+                        android:elevation="2dp"
+                        android:padding="4dp"
                         android:layout_marginBottom="4dp"
                         android:id="@+id/discoveryfragment_kategoridetail_tampilkan_btn"
                         android:layout_width="match_parent"
@@ -70,12 +72,12 @@
                         android:layout_marginTop="32dp"
                         android:layout_marginRight="32dp"
                         android:layout_weight="1"
-                        android:background="@drawable/universal_yellow_button"
+                        android:background="@drawable/universal_yellow_lighter_button"
                         android:fontFamily="@font/inter_bold"
                         android:text="Tampilkan desainer"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
-                        android:textSize="16dp" />
+                        android:textSize="12dp" />
                 </LinearLayout>
 
             </LinearLayout>

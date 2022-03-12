@@ -26,6 +26,7 @@ class RvAdapterListChatViewHolder(private var activity: AppCompatActivity,
     private var clickArea:LinearLayout
     private var dbRef:DbReference
     private var loadAct:LoadActivity
+    private var lastBack:Long =0
 
     init {
         imageLawan = itemView.findViewById(R.id.chatfragment_listchat_border_image)
@@ -60,15 +61,21 @@ class RvAdapterListChatViewHolder(private var activity: AppCompatActivity,
     }
     fun runClickListener(roomId: String){
         clickArea.setOnClickListener {
-            loadAct.loadActivityCompleteWithExtras(
-                thisContext,
-                ChatActivity::class.java,
-                activity,
-                true,
-                1000,
-                "uid",
-                roomId
-            )
+            if(lastBack+2000 > System.currentTimeMillis()){
+
+            }else{
+                loadAct.loadActivityCompleteWithExtras(
+                    thisContext,
+                    ChatActivity::class.java,
+                    activity,
+                    true,
+                    500,
+                    "uid",
+                    roomId
+                )
+            }
+
+            lastBack = System.currentTimeMillis()
         }
     }
 }

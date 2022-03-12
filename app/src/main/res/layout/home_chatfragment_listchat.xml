@@ -15,15 +15,16 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:background="@color/color_palet_blue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/sfpro_display_black_bold"
             android:gravity="center"
             android:paddingTop="32dp"
-            android:paddingBottom="16dp"
+            android:paddingBottom="32dp"
             android:text="Chat"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textColor="@color/color_palet_white2"
+            android:textSize="20dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chatfragment_listchat_rv"

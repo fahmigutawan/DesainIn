@@ -45,7 +45,7 @@
             android:text="Memberikan kemudahan Anda dalam berkomunikasi bersama desainer ternama."
             android:textColor="@color/color_palet_white3"
             android:fontFamily="@font/sfpro_display_reguler"
-            android:textSize="14dp"
+            android:textSize="12dp"
             android:textAlignment="textEnd"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"

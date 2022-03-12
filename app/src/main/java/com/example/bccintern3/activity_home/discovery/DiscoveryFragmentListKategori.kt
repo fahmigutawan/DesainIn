@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.adapterlistcategory.RvAdapterListKategori
 import com.example.bccintern3.nonactivity_invisiblefunction.BackHandler
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,7 +20,8 @@ class DiscoveryFragmentListKategori(private val flManager: FragmentManager,
                                     private val thisContext: Context,
                                     private val navbar: BottomNavigationView,
                                     private val activity: AppCompatActivity,
-                                    private val appContext: Context
+                                    private val appContext: Context,
+                                    private var parentHome: HomeActivity
 ):Fragment(R.layout.home_discoveryfragment_listkategori) {
     private lateinit var listRv:RecyclerView
     private lateinit var rvAdapter:RvAdapterListKategori
@@ -36,7 +38,7 @@ class DiscoveryFragmentListKategori(private val flManager: FragmentManager,
         view.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 view.viewTreeObserver.removeOnGlobalLayoutListener(this)
-                rvAdapter = RvAdapterListKategori(view,flManager,thisContext, navbar,activity,appContext)
+                rvAdapter = RvAdapterListKategori(view,flManager,thisContext, navbar,activity,appContext,parentHome)
                 val linearLayoutManager = LinearLayoutManager(thisContext,LinearLayoutManager.VERTICAL,false)
                 listRv.layoutManager = linearLayoutManager
                 listRv.adapter = rvAdapter
@@ -53,7 +55,7 @@ class DiscoveryFragmentListKategori(private val flManager: FragmentManager,
             override fun handleOnBackPressed() {
                 val handler = context as BackHandler
                 handler.loadFragment(flManager,R.id.homeactivity_flmanager,
-                    DiscoveryFragmentDefault(flManager,context, navbar, activity,appContext)
+                    DiscoveryFragmentDefault(flManager,context, navbar, activity,appContext,parentHome)
                 )
             }
         }

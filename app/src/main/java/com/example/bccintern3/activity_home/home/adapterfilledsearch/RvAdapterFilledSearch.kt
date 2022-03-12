@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bccintern3.activity_home.HomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class RvAdapterFilledSearch(private var parentView: View,
@@ -16,7 +17,8 @@ class RvAdapterFilledSearch(private var parentView: View,
                             private var searchedUidList:ArrayList<String>,
                             private var searchIdKategori:ArrayList<String>,
                             private var thisContext:Context,
-                            private var appContext: Context
+                            private var appContext: Context,
+                            private var parentHome: HomeActivity
 ):RecyclerView.Adapter<RvAdapterFilledSearchViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RvAdapterFilledSearchViewHolder {
@@ -28,7 +30,7 @@ class RvAdapterFilledSearch(private var parentView: View,
             navbar,
             activity,
             thisContext,appContext
-        )
+                ,parentHome)
     }
 
     override fun onBindViewHolder(holder: RvAdapterFilledSearchViewHolder, position: Int) {

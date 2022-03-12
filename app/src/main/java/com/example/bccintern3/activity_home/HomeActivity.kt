@@ -25,7 +25,7 @@ class HomeActivity:
 
     private var fragLayout:Int=0
     private var thisContext=this
-    private lateinit var botNavbar:BottomNavigationView
+    lateinit var botNavbar:BottomNavigationView
     private lateinit var parentFlManager:FragmentManager
     private lateinit var loadFrag:LoadFragment
     private lateinit var loadAct:LoadActivity
@@ -34,7 +34,9 @@ class HomeActivity:
     private lateinit var chatFragment:ChatFragmentListChat
     private lateinit var fbAuth:FirebaseAuth
     private lateinit var intentData:String
-    var lastId=0
+    private var lastTime:Long = 0
+    private var lastId:Int = 0
+    private lateinit var thisHome:HomeActivity
 
     fun init() {
         fragLayout = R.id.homeactivity_flmanager
@@ -42,12 +44,13 @@ class HomeActivity:
         parentFlManager = supportFragmentManager
         loadFrag = LoadFragment()
         loadAct = LoadActivity()
-        homeFragment = HomeFragment(parentFlManager,this,this,botNavbar,applicationContext)
+        thisHome = HomeActivity()
+        homeFragment = HomeFragment(parentFlManager,this,this,botNavbar,applicationContext,thisHome)
 
         loadIntentExtras()
         loadFirstFragment()
 
-        discoveryFragment = DiscoveryFragmentDefault(parentFlManager,this,botNavbar,this,applicationContext)
+        discoveryFragment = DiscoveryFragmentDefault(parentFlManager,this,botNavbar,this,applicationContext,thisHome)
         chatFragment = ChatFragmentListChat(thisContext,this,botNavbar)
 
         fbAuth = FirebaseAuth.getInstance()
@@ -63,49 +66,67 @@ class HomeActivity:
         runNavbarListener()
     }
     private fun runNavbarListener(){
-
         botNavbar.setOnItemSelectedListener(object:NavigationBarView.OnItemSelectedListener{
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 val id = item.itemId
-                lastId=0
 
                 when(id){
                     R.id.navHome->{
-                        lastId=0
                         Handler().postDelayed({
                             loadFrag.transfer(parentFlManager,fragLayout,homeFragment)
                                               },500)
                     }
                     R.id.navDiscovery->{
-                        lastId=1
+                        thisHome.setLastId(1)
                         Handler().postDelayed({
                             loadFrag.transfer(parentFlManager,fragLayout,discoveryFragment)
                                               },500)
                     }
                     R.id.navChat->{
-                        lastId=2
-                        Handler().postDelayed({
-                            loadFrag.transfer(parentFlManager,fragLayout,chatFragment)
-                        },500)
+                        if(lastTime+5000 > System.currentTimeMillis()){
+
+                        }else{
+                            Handler().postDelayed({
+                                if(fbAuth.currentUser==null){
+                                    botNavbar.isClickable = false
+                                    loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,false)
+                                    Handler().postDelayed({
+                                        botNavbar.menu.getItem(3).setChecked(false)
+                                        botNavbar.menu.getItem(thisHome.getLastId()).setChecked(true)
+                                    },1000)
+                                }
+                                else{
+                                    loadFrag.transfer(parentFlManager,fragLayout,chatFragment)
+                                    thisHome.setLastId(2)
+                                }
+                            },500)
+                        }
+                        lastTime = System.currentTimeMillis()
                     }
                     R.id.navProfile->{
-                        Handler().postDelayed({
-                            if(fbAuth.currentUser==null){
-                                loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,false)
-                                Handler().postDelayed({
-                                    botNavbar.menu.getItem(3).setChecked(false)
-                                    botNavbar.menu.getItem(0).setChecked(true)
-                                },500)
-                            }
-                            else{
-                                loadFrag.transfer(parentFlManager,R.id.homeactivity_flmanager,ProfileFragment(thisContext,thisContext))
-                            }
-                                              },500)
+                        if(lastTime+5000 > System.currentTimeMillis()){
+
+                        }else{
+                            Handler().postDelayed({
+                                if(fbAuth.currentUser==null){
+                                    botNavbar.isClickable = false
+                                    loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,false)
+                                    Handler().postDelayed({
+                                        botNavbar.menu.getItem(3).setChecked(false)
+                                        botNavbar.menu.getItem(thisHome.getLastId()).setChecked(true)
+                                    },1000)
+                                }
+                                else{
+                                    loadFrag.transfer(parentFlManager,R.id.homeactivity_flmanager,ProfileFragment(thisContext,thisContext))
+                                    thisHome.setLastId(3)
+                                }
+                            },500)
+                        }
+                        lastTime = System.currentTimeMillis()
                     }
                 }
                 return true
             }
-
         })
     }
     private fun loadIntentExtras(){
@@ -114,10 +135,12 @@ class HomeActivity:
     private fun loadFirstFragment(){
         if(intentData==getString(R.string.home_fragment)){
             Handler().postDelayed({
+                thisHome.setLastId(0)
                 loadFrag.transfer(parentFlManager,fragLayout,homeFragment)
             },500)
         }
         else if(intentData==getString(R.string.discovery_fragment)){
+            thisHome.setLastId(1)
             botNavbar.menu.getItem(0).setChecked(false)
             botNavbar.menu.getItem(1).setChecked(true)
             Handler().postDelayed({
@@ -125,6 +148,7 @@ class HomeActivity:
             },500)
         }
         else if(intentData==getString(R.string.chat_fragment)){
+            thisHome.setLastId(2)
             botNavbar.menu.getItem(0).setChecked(false)
             botNavbar.menu.getItem(2).setChecked(true)
             Handler().postDelayed({
@@ -132,24 +156,31 @@ class HomeActivity:
             },500)
         }
         else if(intentData==getString(R.string.user_fragment)){
+            thisHome.setLastId(3)
             Handler().postDelayed({
                 if(fbAuth.currentUser==null){
                     loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,false)
                     Handler().postDelayed({
                         botNavbar.menu.getItem(3).setChecked(false)
-                        botNavbar.menu.getItem(0).setChecked(true)
+                        botNavbar.menu.getItem(thisHome.getLastId()).setChecked(true)
                     },500)
                 }
                 else{
+                    thisHome.setLastId(0)
                     loadFrag.transfer(parentFlManager,R.id.homeactivity_flmanager,ProfileFragment(thisContext,thisContext))
                 }
             },500)
         }
         else{
-            lastId=0
             Handler().postDelayed({
                 loadFrag.transfer(parentFlManager,fragLayout,homeFragment)
             },500)
         }
+    }
+    public fun setLastId(id:Int){
+        lastId=id
+    }
+    public fun getLastId():Int{
+        return lastId
     }
 }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bccintern3.activity_home.HomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class RvAdapterNotFilledDesainer(private var parentView: View,
@@ -16,7 +17,8 @@ class RvAdapterNotFilledDesainer(private var parentView: View,
                                  private var designerList:ArrayList<String>,
                                  private var idDesignerKategori:ArrayList<String>,
                                  private var thisContext:Context,
-                                 private var appContext: Context
+                                 private var appContext: Context,
+                                 private var parentHome: HomeActivity
                                  )
     :RecyclerView.Adapter<RvADapterNotFilledDesainerViewHolder>() {
 
@@ -42,7 +44,7 @@ class RvAdapterNotFilledDesainer(private var parentView: View,
                     indexRandomized.add(tmp)
                 }
             }
-            if(indexRandomized.size==3) break
+            if(indexRandomized.size==4) break
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RvADapterNotFilledDesainerViewHolder {
@@ -56,12 +58,12 @@ class RvAdapterNotFilledDesainer(private var parentView: View,
             designerList,
             idDesignerKategori,
             thisContext
-            ,appContext)
+            ,appContext,parentHome)
     }
     override fun onBindViewHolder(holder: RvADapterNotFilledDesainerViewHolder, position: Int) {
         holder.bind(indexRandomized.get(position))
     }
     override fun getItemCount(): Int {
-        return 3
+        return 4
     }
 }

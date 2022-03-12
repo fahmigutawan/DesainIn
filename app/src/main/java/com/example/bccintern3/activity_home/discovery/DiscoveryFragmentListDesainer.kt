@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.adapterlistdesainer.RvAdapterListDesainer
 import com.example.bccintern3.activity_home.home.HomeFragment
 import com.example.bccintern3.activity_home.home.HomeFragmentNotFilled
@@ -28,7 +29,8 @@ class DiscoveryFragmentListDesainer(private val flManager: FragmentManager,
                                     private val navbar: BottomNavigationView,
                                     private val idKategori:String?,
                                     private val activity:AppCompatActivity,
-                                    private val appContext: Context
+                                    private val appContext: Context,
+                                    private var parent:HomeActivity
 ):Fragment(R.layout.home_discoveryfragment_listdesainer) {
     private lateinit var desainerRv:RecyclerView
     private lateinit var kategoriTv:TextView
@@ -76,7 +78,7 @@ class DiscoveryFragmentListDesainer(private val flManager: FragmentManager,
                                 navbar,
                                 uid,
                                 idKategori,
-                                activity,appContext)
+                                activity,appContext,parent)
 
                             val linearLayoutManager = LinearLayoutManager(thisContext,LinearLayoutManager.VERTICAL,false)
                             desainerRv.layoutManager = linearLayoutManager
@@ -109,8 +111,7 @@ class DiscoveryFragmentListDesainer(private val flManager: FragmentManager,
                                 navbar,
                                 uid,
                                 idKategori,
-                                activity,appContext
-                                )
+                                activity,appContext,parent)
 
                             val linearLayoutManager = LinearLayoutManager(thisContext,LinearLayoutManager.VERTICAL,false)
                             desainerRv.layoutManager = linearLayoutManager
@@ -138,7 +139,7 @@ class DiscoveryFragmentListDesainer(private val flManager: FragmentManager,
                     navbar.menu.getItem(1).setChecked(false)
                     navbar.menu.getItem(0).setChecked(true)
                     handler.loadFragment(flManager,R.id.homeactivity_flmanager,
-                        HomeFragment(flManager, activity, thisContext, navbar,appContext)
+                        HomeFragment(flManager, activity, thisContext, navbar,appContext,parent)
                     )
                 },1000)
             }

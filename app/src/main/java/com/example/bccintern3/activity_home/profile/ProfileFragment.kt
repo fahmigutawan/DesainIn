@@ -7,11 +7,16 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.bccintern2.picasso.CircleTransform
 import com.example.bccintern3.R
 import com.example.bccintern3.activity_home.HomeActivity
+import com.example.bccintern3.activity_hubungikami.HubungiKamiActivity
+import com.example.bccintern3.dummyactivity_riwayatorder.DummyRiwayatOrderActivity
+import com.example.bccintern3.nonactivity_invisiblefunction.BackHandler
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.example.bccintern3.nonactivity_invisiblefunction.LoadActivity
 import com.example.bccintern3.nonactivity_invisiblefunction.LoadFragment
@@ -32,13 +37,15 @@ class ProfileFragment(
     private lateinit var nameTV:TextView
     private lateinit var emailTV:TextView
     private lateinit var editProfilBtn:Button
-    private lateinit var desainerSavedBtn:Button
+    private lateinit var hubungiKamiBtn:Button
     private lateinit var riwayatOrderBtn:Button
     private lateinit var logoutBtn:Button
     private lateinit var dbReference: DbReference
     private lateinit var fbAuth:FirebaseAuth
     private lateinit var loadAct:LoadActivity
     private lateinit var loadFrag:LoadFragment
+    private var lastBack:Long =0
+    private var time:Long=0
 
     fun init(view:View) {
         /** DEKLARASI **/
@@ -46,7 +53,7 @@ class ProfileFragment(
         nameTV = view.findViewById(R.id.profilefragment_name_textview)
         emailTV = view.findViewById(R.id.profilefragment_email_textview)
         editProfilBtn = view.findViewById(R.id.profilfragment_edit_btn)
-        desainerSavedBtn = view.findViewById(R.id.profilfragment_desainertersimpan_btn)
+        hubungiKamiBtn = view.findViewById(R.id.profilfragment_hubungikami_btn)
         riwayatOrderBtn = view.findViewById(R.id.profilfragment_riwayatorder_btn)
         logoutBtn = view.findViewById(R.id.profilfragment_logout_btn)
         dbReference = DbReference()
@@ -59,17 +66,49 @@ class ProfileFragment(
 
         /** Menyetel nama, PP, dan email **/
         setDataPreview()
+        runCLickListener()
 
-        /** Operasi **/
-        editProfilBtn.setOnClickListener {
-            loadAct.loadActivityDelayable(thisContext,EditProfileActivity::class.java,1000)
-        }
-        logoutBtn.setOnClickListener {
-            signOut(thisContext,)
-        }
         super.onViewCreated(view, savedInstanceState)
     }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        runBackHandler(context)
+    }
 
+    private fun runCLickListener(){
+        /** Operasi **/
+        editProfilBtn.setOnClickListener {
+            if(lastBack+2000 > System.currentTimeMillis()){
+
+            }else{
+                loadAct.loadActivityDelayable(thisContext,EditProfileActivity::class.java,1000)
+            }
+            lastBack = System.currentTimeMillis()
+        }
+        riwayatOrderBtn.setOnClickListener {
+            if(lastBack+2000>System.currentTimeMillis()){
+
+            }else{
+                loadAct.loadActivityDelayable(thisContext,DummyRiwayatOrderActivity::class.java,500)
+            }
+        }
+        logoutBtn.setOnClickListener {
+            if(time+1500>System.currentTimeMillis()){
+
+            }else{
+                signOut(thisContext)
+            }
+            time = System.currentTimeMillis()
+        }
+        hubungiKamiBtn.setOnClickListener {
+            if(lastBack+2000 > System.currentTimeMillis()){
+
+            }else{
+                loadAct.loadActivityDelayable(thisContext,HubungiKamiActivity::class.java,1000)
+            }
+            lastBack = System.currentTimeMillis()
+        }
+    }
     private fun setDataPreview(){
         val ref = dbReference.refUidNode(fbAuth.currentUser?.uid.toString()).child("profile")
         Log.e("MSG",fbAuth.currentUser?.uid.toString())
@@ -94,19 +133,44 @@ class ProfileFragment(
         })
     }
     private fun signOut(context:Context){
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
+        val ref = dbReference.refUidNode(fbAuth.currentUser?.uid.toString()).child("profile")
 
-        val mGoogleSignInClient = GoogleSignIn.getClient(context,gso)
-        fbAuth.signOut()
-        mGoogleSignInClient.signOut().addOnSuccessListener {
-            mGoogleSignInClient.revokeAccess().addOnSuccessListener {
-                activity.finish()
-                loadAct.loadActivityDisposable(thisContext,HomeActivity::class.java,activity,true)
+        ref.child("fcmToken").removeValue().addOnSuccessListener {
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build()
+
+            val mGoogleSignInClient = GoogleSignIn.getClient(context,gso)
+            fbAuth.signOut()
+            mGoogleSignInClient.signOut().addOnSuccessListener {
+                mGoogleSignInClient.revokeAccess().addOnSuccessListener {
+                    activity.finish()
+                    loadAct.loadActivityDisposable(thisContext,HomeActivity::class.java,activity,true)
+                }
+            }
+            loadAct.loadActivityComplete(thisContext,HomeActivity::class.java,activity,true,1500)
+        }.addOnFailureListener {
+            Toast.makeText(thisContext,"Signout gagal, coba lagi nanti",Toast.LENGTH_SHORT).show()
+        }
+
+    }
+    private fun runBackHandler(context: Context){
+        val back = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                val handler = context as BackHandler
+                val toast = Toast.makeText(thisContext,"Tekan kembali lagi untuk keluar",Toast.LENGTH_SHORT)
+
+                if(time+1500>System.currentTimeMillis()){
+                    toast.cancel()
+                    handler.exit(activity)
+                }
+                else{
+                    toast.show()
+                }
+                time = System.currentTimeMillis()
             }
         }
-        loadAct.loadActivityComplete(thisContext,HomeActivity::class.java,activity,true,1500)
+        requireActivity().onBackPressedDispatcher.addCallback(this,back)
     }
 }

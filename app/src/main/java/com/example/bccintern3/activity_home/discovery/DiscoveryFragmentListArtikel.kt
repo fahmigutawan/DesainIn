@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.adapterlistartikel.RvAdapterListArtikel
 import com.example.bccintern3.nonactivity_invisiblefunction.BackHandler
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
@@ -23,7 +24,8 @@ class DiscoveryFragmentListArtikel(private val flManager: FragmentManager,
                                    private val thisContext: Context,
                                    private val navbar: BottomNavigationView,
                                    private val activity:AppCompatActivity,
-                                   private val appContext: Context
+                                   private val appContext: Context,
+                                   private var parentHome: HomeActivity
 ):Fragment(R.layout.home_discoveryfragment_listartikel) {
 
     private lateinit var artikelRv:RecyclerView
@@ -46,7 +48,7 @@ class DiscoveryFragmentListArtikel(private val flManager: FragmentManager,
             override fun handleOnBackPressed() {
                 val handler = context as BackHandler
                 handler.loadFragment(flManager,R.id.homeactivity_flmanager,
-                    DiscoveryFragmentDefault(flManager,context, navbar, activity,appContext)
+                    DiscoveryFragmentDefault(flManager,context, navbar, activity,appContext,parentHome)
                 )
             }
         }
@@ -91,7 +93,7 @@ class DiscoveryFragmentListArtikel(private val flManager: FragmentManager,
                                 }
                             }
                         }
-                        rvAdapter = RvAdapterListArtikel(view,flManager,arrAtribut,navbar,activity,appContext)
+                        rvAdapter = RvAdapterListArtikel(view,flManager,arrAtribut,navbar,activity,appContext,parentHome)
                         val linearLayoutManager = LinearLayoutManager(thisContext,LinearLayoutManager.VERTICAL,false)
                         artikelRv.layoutManager = linearLayoutManager
                         artikelRv.adapter=rvAdapter

@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentDetailArtikel
 import com.example.bccintern3.nonactivity_invisiblefunction.LoadFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -24,7 +25,9 @@ class RvAdapterDefaultArticleViewHolder(inflater: LayoutInflater
                                         , mainFlManager:FragmentManager
                                         , private val activity: AppCompatActivity
                                         , private val navbar:BottomNavigationView
-                                        , private val appContext:Context)
+                                        , private val appContext:Context,
+                                        private var parentHome: HomeActivity
+)
     : RecyclerView.ViewHolder(inflater.inflate(R.layout.home_discoveryfragment_default_artikelborder,parent,false))
 {
     private var imageView: ImageView
@@ -77,7 +80,7 @@ class RvAdapterDefaultArticleViewHolder(inflater: LayoutInflater
                 loadFrag.transfer(
                     mainFlManager
                     ,R.id.homeactivity_flmanager
-                    ,DiscoveryFragmentDetailArtikel(hari, bulan, tahun, id, mainFlManager,navbar,activity,appContext))
+                    ,DiscoveryFragmentDetailArtikel(hari, bulan, tahun, id, mainFlManager,navbar,activity,appContext,parentHome))
             },1000)
         }
     }

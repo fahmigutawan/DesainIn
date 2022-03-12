@@ -49,6 +49,9 @@
         </activity>
         <activity android:name=".dummyactivity_payment.DummyPaymentActivity"/>
         <activity android:name=".dummyactivity_paymentkonfirmasi.DummyPaymentKonfirmasiActivity"/>
+        <activity android:name=".activity_hubungikami.HubungiKamiActivity"/>
+        <activity android:name=".dummyactivity_riwayatorder.DummyRiwayatOrderActivity"/>
+        <activity android:name=".dummyactivity_riwayatorder.DummyRiwayatOrderDetailActivity"/>
     </application>
 
 </manifest>

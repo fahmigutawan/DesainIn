@@ -29,7 +29,6 @@ class EditProfileActivity:AppCompatActivity() {
     private lateinit var fbAuth:FirebaseAuth
     private lateinit var imageUri:Uri
     private lateinit var storageRef:StorageReference
-    private lateinit var credential:AuthCredential
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

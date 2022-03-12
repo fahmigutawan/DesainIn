@@ -47,7 +47,7 @@
                 android:maxLines="1"
                 android:text=". . ."
                 android:textColor="@color/black"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/discoveryfragment_listdesainer_border_kategoritv"
@@ -57,7 +57,7 @@
                 android:maxLines="1"
                 android:text=". . ."
                 android:textColor="@color/black"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/discoveryfragment_listdesainer_border_hargatv"
@@ -66,8 +66,8 @@
                 android:fontFamily="@font/poppins_reguler"
                 android:maxLines="1"
                 android:text=". . ."
-                android:textColor="@color/blue_cyan"
-                android:textSize="12dp" />
+                android:textColor="@color/black"
+                android:textSize="10dp" />
         </LinearLayout>
     </LinearLayout>
 

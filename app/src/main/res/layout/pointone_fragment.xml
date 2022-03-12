@@ -51,7 +51,7 @@
                 android:text="Pantau informasi terbaru dan menarik dari desainer hanya dalam genggaman Anda."
                 android:textAlignment="textStart"
                 android:textColor="@color/color_palet_white3"
-                android:textSize="14dp" />
+                android:textSize="12dp" />
         </LinearLayout>
 
     </LinearLayout>

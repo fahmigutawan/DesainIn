@@ -41,6 +41,7 @@ class LoginActivity:AppCompatActivity() {
     private lateinit var dbReference: DbReference
     private lateinit var loadAct: LoadActivity
     private lateinit var imageView: ImageView
+    private var lastBack:Long = 0
 
     fun init() {
         emailInput = findViewById(R.id.loginactivity_emil_et)
@@ -86,7 +87,12 @@ class LoginActivity:AppCompatActivity() {
 
     fun runClickListener(){
         daftarBtn.setOnClickListener {
-            loadAct.loadActivity(this, SignUpActivity::class.java)
+            if(lastBack+2000>System.currentTimeMillis()){
+
+            }else{
+                loadAct.loadActivity(this, SignUpActivity::class.java)
+            }
+            lastBack = System.currentTimeMillis()
         }
         googleLoginBtn.setOnClickListener {
             signInGoogle()
@@ -204,11 +210,6 @@ class LoginActivity:AppCompatActivity() {
             }
         }
     }
-
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        loadAct.loadActivityDisposable(this,HomeActivity::class.java,this,true)
-//    }
 
     companion object {
         private const val RC_SIGN_IN = 120

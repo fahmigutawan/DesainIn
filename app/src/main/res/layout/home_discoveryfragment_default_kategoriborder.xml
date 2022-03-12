@@ -5,16 +5,38 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/discoveryfragment_default_kategoriborder_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+    <LinearLayout
+        android:id="@+id/discoveryfragment_default_kategoriborder_clickarea"
+        android:background="@drawable/universal_blue_button"
+        android:padding="8dp"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/discoveryfragment_default_kategoriborder_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/discoveryfragment_default_kategoriborder_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=". . ."
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="12dp"
+            android:textColor="@color/color_palet_white3"
+            android:fontFamily="@font/sfpro_display_reguler"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

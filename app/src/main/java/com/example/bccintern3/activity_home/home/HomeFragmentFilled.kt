@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.home.adapterfilledsearch.RvAdapterFilledSearch
 import com.example.bccintern3.nonactivity_invisiblefunction.BackHandler
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
@@ -30,7 +31,8 @@ class HomeFragmentFilled(private var flManager: FragmentManager,
                          private var uid:ArrayList<String>,
                          private var nama:ArrayList<String>,
                          private var idKategori:ArrayList<String>,
-                         private var appContext: Context
+                         private var appContext: Context,
+                         private var parentHome: HomeActivity
                          )
     :Fragment(R.layout.home_homefragment_filled) {
 
@@ -62,7 +64,7 @@ class HomeFragmentFilled(private var flManager: FragmentManager,
         }
     }
     fun createRecyclerView(view: View){
-        val adapter = RvAdapterFilledSearch(view,flManager,navbar,activity,resultUidSearch,resultIdKategori,thisContext,appContext)
+        val adapter = RvAdapterFilledSearch(view,flManager,navbar,activity,resultUidSearch,resultIdKategori,thisContext,appContext,parentHome)
         searchRv.layoutManager = LinearLayoutManager(thisContext,LinearLayoutManager.VERTICAL,false)
         searchRv.adapter = adapter
     }
@@ -80,7 +82,7 @@ class HomeFragmentFilled(private var flManager: FragmentManager,
             override fun handleOnBackPressed() {
                 val handler = context as BackHandler
                 search.setText("")
-                handler.loadFragment(flManager,R.id.home_homefragment_fl,HomeFragmentNotFilled(flManager,activity,thisContext,navbar,appContext))
+                handler.loadFragment(flManager,R.id.home_homefragment_fl,HomeFragmentNotFilled(flManager,activity,thisContext,navbar,appContext,parentHome))
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this,back)

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bccintern2.picasso.CircleTransform
 import com.example.bccintern2.picasso.RoundCornerRect
 import com.example.bccintern3.R
+import com.example.bccintern3.activity_home.HomeActivity
 import com.example.bccintern3.activity_home.discovery.DiscoveryFragmentDetailDesainer
 import com.example.bccintern3.nonactivity_invisiblefunction.DbReference
 import com.example.bccintern3.nonactivity_invisiblefunction.LoadActivity
@@ -32,7 +33,8 @@ class RvAdapterFilledSearchViewHolder(private var inflater: LayoutInflater,
                                       private var navbar: BottomNavigationView,
                                       private var activity: AppCompatActivity,
                                       private var thisContext:Context,
-                                      private var appContext: Context
+                                      private var appContext: Context,
+                                      private var parentHome: HomeActivity
 ):
     RecyclerView.ViewHolder(inflater.inflate(R.layout.home_filled_searched_border,parent,false)) {
 
@@ -64,7 +66,7 @@ class RvAdapterFilledSearchViewHolder(private var inflater: LayoutInflater,
                 loadFrag.transfer(
                     mainFlManager,
                     R.id.homeactivity_flmanager,
-                    DiscoveryFragmentDetailDesainer(mainFlManager,thisContext,navbar,activity,uid,idKategori,appContext)
+                    DiscoveryFragmentDetailDesainer(mainFlManager,thisContext,navbar,activity,uid,idKategori,appContext,parentHome)
                 )
             },1000)
         }
