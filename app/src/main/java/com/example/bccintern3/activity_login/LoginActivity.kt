@@ -193,11 +193,11 @@ class LoginActivity:AppCompatActivity() {
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
     fun signInEmail(email:String,pass:String){
-        //login dengan email dan password
         fbAuth.signInWithEmailAndPassword(email,pass).addOnFailureListener {
             Toast.makeText(applicationContext,"Login gagal, cek kembali data yang anda masukkan",Toast.LENGTH_SHORT).show()
         }.addOnSuccessListener {
             checkFirstTimeLogin()
+            Toast.makeText(applicationContext,"Login berhasil.\n\nOtomatis akan ke halaman beranda",Toast.LENGTH_LONG).show()
             sendToken()
         }
     }

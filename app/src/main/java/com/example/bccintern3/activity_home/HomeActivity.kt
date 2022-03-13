@@ -1,5 +1,6 @@
 package com.example.bccintern3.activity_home
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -108,6 +109,7 @@ class HomeActivity:
                         }else{
                             Handler().postDelayed({
                                 if(fbAuth.currentUser==null){
+                                    val intent = Intent(thisContext,LoginActivity::class.java)
                                     loadAct.loadActivityDisposable(thisContext,LoginActivity::class.java,thisContext,false)
                                     Handler().postDelayed({
                                         botNavbar.menu.getItem(3).setChecked(false)

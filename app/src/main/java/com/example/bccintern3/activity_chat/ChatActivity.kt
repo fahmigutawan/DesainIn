@@ -186,8 +186,7 @@ class ChatActivity:AppCompatActivity(R.layout.chatroom_activity),PopupMenu.OnMen
 
             }
             else{
-                sendMessage(chatInput.text.toString())
-                //loadLastChat()
+                sendMessage(chatInput.text.toString().trim())
             }
         }
     }
